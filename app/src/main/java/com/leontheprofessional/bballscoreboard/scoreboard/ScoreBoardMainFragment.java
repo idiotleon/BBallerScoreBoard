@@ -1,7 +1,7 @@
 package com.leontheprofessional.bballscoreboard.scoreboard;
 
 import android.annotation.TargetApi;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,6 +17,8 @@ public class ScoreBoardMainFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // todo: inflate the fragment with the data stored in the database
+
         return inflater.inflate(R.layout.fragment_scoreboard_main, container, false);
     }
 }

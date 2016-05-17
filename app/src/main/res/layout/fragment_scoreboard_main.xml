@@ -45,7 +45,8 @@
             android:id="@+id/pt_3_score_board"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="@string/zero_zero"/>
     </LinearLayout>
 
     <LinearLayout
@@ -83,7 +84,8 @@
             android:id="@+id/pt_2_score_board"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="@string/zero_zero"/>
     </LinearLayout>
 
     <LinearLayout
@@ -121,7 +123,8 @@
             android:id="@+id/pt_1_score_board"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="@string/zero_zero"/>
     </LinearLayout>
 
     <LinearLayout
@@ -159,7 +162,8 @@
             android:id="@+id/rebound_score_board"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="@string/zero_zero"/>
     </LinearLayout>
 
     <LinearLayout
@@ -190,7 +194,8 @@
             android:id="@+id/steal_score_board"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="@string/zero"/>
     </LinearLayout>
 
     <LinearLayout
@@ -220,7 +225,8 @@
             android:id="@+id/faul_score_board"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="@string/zero"/>
     </LinearLayout>
 
     <LinearLayout
@@ -250,7 +256,8 @@
             android:id="@+id/turnover_score_board"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="@string/zero"/>
     </LinearLayout>
 
 </LinearLayout>
