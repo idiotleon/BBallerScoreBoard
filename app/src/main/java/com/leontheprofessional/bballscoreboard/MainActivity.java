@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        scoreBoardMainActivityBtn = (Button)findViewById(R.id.scoreboard_btn_main_activity);
+        scoreBoardMainActivityBtn = (Button) findViewById(R.id.scoreboard_btn_main_activity);
         scoreBoardMainActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        statisticsMainActivityBtn = (Button)findViewById(R.id.statistic_btn_main_activity);
+        statisticsMainActivityBtn = (Button) findViewById(R.id.statistic_btn_main_activity);
         statisticsMainActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.main_activity_menu_login:
                 Toast.makeText(MainActivity.this, "LogIn capabilities will be added shortly", Toast.LENGTH_SHORT).show();
                 return true;
