@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">篮球计分器</string>
+    <string name="pt_3">3分</string>
+    <string name="pt_2">2分</string>
+    <string name="pt_1">罚球</string>
+    <string name="bucket">中</string>
+    <string name="miss_bucket">失</string>
+
+    <string name="rebound">篮板</string>
+    <string name="offensive_rebound">前场篮板</string>
+    <string name="defensive_rebound">后场篮板</string>
+    <string name="steal">抢断</string>
+    <string name="add">增加</string>
+    <string name="faul">犯规</string>
+    <string name="turnover">失误</string>
+
+    <string name="correction">纠正</string>
+
+</resources>
