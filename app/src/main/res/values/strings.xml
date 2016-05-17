@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BBallScoreBoard</string>
+    <string name="pt_3">3Pt</string>
+    <string name="pt_2">2Pt</string>
+    <string name="pt_1">FreeThrow</string>
+    <string name="bucket">Bucket</string>
+    <string name="miss_bucket">Miss</string>
+
+    <string name="rebound">Rebound</string>
+    <string name="offensive_rebound">OffensiveRebound</string>
+    <string name="defensive_rebound">DefensiveRebound</string>
+    <string name="steal">Steal</string>
+    <string name="add">Add</string>
+
+</resources>
