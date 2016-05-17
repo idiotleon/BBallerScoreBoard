@@ -15,4 +15,9 @@
     <string name="turnover">Turnover</string>
     <string name="correction">C</string>
 
+
+    <string name="scoreboard_main_activity">ScoreBoard</string>
+    <string name="statistics_main_activity">Statistics</string>
+
+    <string name="login">LogIn</string>
 </resources>
