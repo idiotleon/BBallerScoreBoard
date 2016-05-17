@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.leontheprofessional.bballscoreboard.Helper.CommonConstants;
 import com.leontheprofessional.bballscoreboard.R;
 
 public class ScoreBoardMainActivity extends AppCompatActivity {
@@ -53,7 +54,12 @@ public class ScoreBoardMainActivity extends AppCompatActivity {
         final FragmentPagerAdapter viewPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                return new ScoreBoardMainFragment();
+                // todo: update with the original data for the fragment that is going to be inflated
+                ScoreBoardMainFragment scoreBoardMainFragment = new ScoreBoardMainFragment();
+                Bundle bundle = new Bundle();
+                bundle.putInt(CommonConstants.JERSEY_NUMBER_IDENTIFIER, position);
+                scoreBoardMainFragment.setArguments(bundle);
+                return scoreBoardMainFragment;
             }
 
             @Override
