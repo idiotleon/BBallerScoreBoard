@@ -1,0 +1,42 @@
+﻿The simple database contract, yet very inefficient is made.
+Every record will be put into a large table leaving the other record as nothing
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Thu May 26 14:42:33 2016 -0700
+#
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   .gradle/2.10/taskArtifacts/cache.properties.lock
+#	modified:   .gradle/2.10/taskArtifacts/fileHashes.bin
+#	modified:   .gradle/2.10/taskArtifacts/fileSnapshots.bin
+#	modified:   .gradle/2.10/taskArtifacts/outputFileStates.bin
+#	modified:   .gradle/2.10/taskArtifacts/taskArtifacts.bin
+#	modified:   .gradle/2.10/tasks/_app_compileDebugAndroidTestJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock
+#	modified:   .gradle/2.10/tasks/_app_compileDebugAndroidTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock
+#	modified:   .gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin
+#	modified:   .gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock
+#	modified:   .gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock
+#	modified:   .gradle/2.10/tasks/_app_compileDebugUnitTestJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock
+#	modified:   .gradle/2.10/tasks/_app_compileDebugUnitTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock
+#	modified:   .idea/libraries/design_23_3_0.xml
+#	modified:   .idea/libraries/recyclerview_v7_23_3_0.xml
+#	modified:   .idea/misc.xml
+#	new file:   .idea/vcs.xml
+#	modified:   .idea/workspace.xml
+#	deleted:    Screenshots/device-2016-05-17-141142.png
+#	new file:   app/src/main/java/com/leontheprofessional/bballscoreboard/database/DatabaseContract.java
+#	new file:   app/src/main/java/com/leontheprofessional/bballscoreboard/database/GameContentProvider.java
+#	new file:   app/src/main/java/com/leontheprofessional/bballscoreboard/database/helper/DatabaseHelper.java
+#	renamed:    app/src/main/java/com/leontheprofessional/bballscoreboard/Helper/CommonConstants.java -> app/src/main/java/com/leontheprofessional/bballscoreboard/helpers/CommonConstants.java
+#	modified:   app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainActivity.java
+#	modified:   app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainFragment.java
+#	modified:   app/src/main/res/layout/fragment_scoreboard_main.xml
+#	modified:   app/src/main/res/layout/scoreboard_activity_main.xml
+#	modified:   build/generated/mockable-android-23.jar
+#	modified:   build/intermediates/dex-cache/cache.xml
+#
+
