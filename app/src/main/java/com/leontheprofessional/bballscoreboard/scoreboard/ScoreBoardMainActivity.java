@@ -1,19 +1,14 @@
 package com.leontheprofessional.bballscoreboard.scoreboard;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.ViewGroup;
 
-import com.leontheprofessional.bballscoreboard.Helper.CommonConstants;
+import com.leontheprofessional.bballscoreboard.helpers.CommonConstants;
 import com.leontheprofessional.bballscoreboard.R;
 
 public class ScoreBoardMainActivity extends AppCompatActivity {
@@ -22,14 +17,6 @@ public class ScoreBoardMainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scoreboard_activity_main);
-
-        /*
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        ScoreBoardMainFragment scoreBoardMainFragment = new ScoreBoardMainFragment();
-        fragmentTransaction.replace(R.id.scoreboard_activity_main_container, scoreBoardMainFragment);
-        fragmentTransaction.commit();
-        */
 
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.scoreboard_activity_main_tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("1"));
@@ -57,7 +44,8 @@ public class ScoreBoardMainActivity extends AppCompatActivity {
                 // todo: update with the original data for the fragment that is going to be inflated
                 ScoreBoardMainFragment scoreBoardMainFragment = new ScoreBoardMainFragment();
                 Bundle bundle = new Bundle();
-                bundle.putInt(CommonConstants.JERSEY_NUMBER_IDENTIFIER, position);
+                // todo: Jersey Numbers are not simply (position + 1)
+                bundle.putInt(CommonConstants.JERSEY_NUMBER_IDENTIFIER, position + 1);
                 scoreBoardMainFragment.setArguments(bundle);
                 return scoreBoardMainFragment;
             }
