@@ -1,5 +1,7 @@
 package com.leontheprofessional.bballscoreboard.database;
 
+import android.content.ContentResolver;
+import android.net.Uri;
 import android.provider.BaseColumns;
 
 public final class DatabaseContract{
@@ -10,10 +12,31 @@ public final class DatabaseContract{
     public static final String TYPE_INTEGER = " INTEGER";
     public static final String TYPE_DATETIME = " DATETIME";
 
+    public static final String AUTHORITY = "com.leontheprofessional.bballscoreboard";
+    public static final String URL_PERFORMANCE = "content://" + AUTHORITY + "/performance/#";
+    public static final String URL_PERFORMANCES = "content://" + AUTHORITY + "/performances";
+    public static final Uri CONTENT_URI_PERFORMANCE = Uri.parse(URL_PERFORMANCE);
+    public static final Uri CONTENT_URI_PERFORMANCEs = Uri.parse(URL_PERFORMANCES);
+
+    public static final String[] projectionForAll = {
+            DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER,
+            DatabaseContract.PerformanceTable.COLUMN_PT_3,
+            DatabaseContract.PerformanceTable.COLUMN_PT_2,
+            DatabaseContract.PerformanceTable.COLUMN_PT_1,
+            DatabaseContract.PerformanceTable.COLUMN_STEAL,
+            DatabaseContract.PerformanceTable.COLUMN_O_REB,
+            DatabaseContract.PerformanceTable.COLUMN_D_REB,
+            DatabaseContract.PerformanceTable.COLUMN_FAUL,
+            DatabaseContract.PerformanceTable.COLUMN_TURNOVER,
+            DatabaseContract.PerformanceTable.COLUMN_BLOCK,
+            DatabaseContract.PerformanceTable.COLUMN_TIMESTAMP
+    };
+
     public static final String TABLE_CREATION = "CREATE TABLE " +
             PerformanceTable.TABLE_NAME + " (" +
+            "_id" + TYPE_INTEGER + " PRIMARY KEY AUTOINCREMENT" +
             PerformanceTable.COLUMN_JERSEY_NUMBER + " INTEGER" + COMMA_SEPARATOR +
-            PerformanceTable.COLUMN_PT3 + TYPE_INTEGER + COMMA_SEPARATOR +
+            PerformanceTable.COLUMN_PT_3 + TYPE_INTEGER + COMMA_SEPARATOR +
             PerformanceTable.COLUMN_PT_2 + TYPE_INTEGER + COMMA_SEPARATOR +
             PerformanceTable.COLUMN_PT_1 + TYPE_INTEGER + COMMA_SEPARATOR +
             PerformanceTable.COLUMN_STEAL + TYPE_INTEGER + COMMA_SEPARATOR +
@@ -35,7 +58,7 @@ public final class DatabaseContract{
     public static abstract class PerformanceTable implements BaseColumns {
         public static final String TABLE_NAME = "performance_table";
         public static final String COLUMN_JERSEY_NUMBER = "jersey_number";
-        public static final String COLUMN_PT3 = "pt_3";
+        public static final String COLUMN_PT_3 = "pt_3";
         public static final String COLUMN_PT_2 = "pt_2";
         public static final String COLUMN_PT_1 = "pt_1";
         public static final String COLUMN_STEAL = "steal";
@@ -45,6 +68,11 @@ public final class DatabaseContract{
         public static final String COLUMN_TURNOVER = "turnover";
         public static final String COLUMN_BLOCK = "block";
         public static final String COLUMN_TIMESTAMP = "datetimestamp";
+
+        public static final String PERFORMANCE_CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
+                "vnd." + AUTHORITY + ".performances";
+        public static final String PERFORMANCE_CONTENT_ITEM_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
+                "vnd." + AUTHORITY + ".performance";
     }
 
     public static abstract class Pt3Table implements BaseColumns{

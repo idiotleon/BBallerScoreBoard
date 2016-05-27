@@ -11,7 +11,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
     private static final String LOG_TAG = DatabaseHelper.class.getSimpleName();
 
-    public DatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public DatabaseHelper(Context context) {
         super(context, DatabaseContract.DATABASE_NAME, null, DatabaseContract.DATABASE_VERSION);
     }
 
