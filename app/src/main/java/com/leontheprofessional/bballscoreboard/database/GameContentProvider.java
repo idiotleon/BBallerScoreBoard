@@ -123,7 +123,7 @@ public class GameContentProvider extends ContentProvider {
         switch (uriMatcher.match(uri)){
             case PERFORMANCES:
                 // todo: delete the last row of the whole table
-                cursor = query(DatabaseContract.CONTENT_URI_PERFORMANCEs,
+                cursor = query(DatabaseContract.CONTENT_URI_PERFORMANCES,
 
 
                         )

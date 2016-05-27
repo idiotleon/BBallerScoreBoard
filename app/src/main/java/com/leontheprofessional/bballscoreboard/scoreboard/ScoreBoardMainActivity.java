@@ -19,21 +19,22 @@ public class ScoreBoardMainActivity extends AppCompatActivity {
         setContentView(R.layout.scoreboard_activity_main);
 
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.scoreboard_activity_main_tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("1"));
-        tabLayout.addTab(tabLayout.newTab().setText("2"));
+
         tabLayout.addTab(tabLayout.newTab().setText("3"));
-        tabLayout.addTab(tabLayout.newTab().setText("4"));
         tabLayout.addTab(tabLayout.newTab().setText("5"));
         tabLayout.addTab(tabLayout.newTab().setText("6"));
         tabLayout.addTab(tabLayout.newTab().setText("7"));
-        tabLayout.addTab(tabLayout.newTab().setText("8"));
-        tabLayout.addTab(tabLayout.newTab().setText("9"));
-        tabLayout.addTab(tabLayout.newTab().setText("10"));
-        tabLayout.addTab(tabLayout.newTab().setText("11"));
-        tabLayout.addTab(tabLayout.newTab().setText("12"));
+        tabLayout.addTab(tabLayout.newTab().setText("34"));
         tabLayout.addTab(tabLayout.newTab().setText("13"));
         tabLayout.addTab(tabLayout.newTab().setText("14"));
-        tabLayout.addTab(tabLayout.newTab().setText("15"));
+        tabLayout.addTab(tabLayout.newTab().setText("9"));
+        tabLayout.addTab(tabLayout.newTab().setText("1"));
+        tabLayout.addTab(tabLayout.newTab().setText("10"));
+        tabLayout.addTab(tabLayout.newTab().setText("18"));
+        tabLayout.addTab(tabLayout.newTab().setText("21"));
+        tabLayout.addTab(tabLayout.newTab().setText("24"));
+        tabLayout.addTab(tabLayout.newTab().setText("29"));
+        tabLayout.addTab(tabLayout.newTab().setText("30"));
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
 

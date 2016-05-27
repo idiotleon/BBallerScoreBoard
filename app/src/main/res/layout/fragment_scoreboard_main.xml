@@ -27,6 +27,7 @@
                 android:text="@string/pt_3" />
 
             <Button
+                android:id="@+id/btn_ptr_3_bucket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -34,16 +35,12 @@
                 android:text="@string/bucket" />
 
             <Button
+                android:id="@+id/btn_ptr_3_miss"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="@dimen/activity_horizontal_margin"
                 android:text="@string/miss_bucket" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_menu_revert" />
 
             <TextView
                 android:id="@+id/pt_3_score_board"
@@ -66,6 +63,7 @@
                 android:text="@string/pt_2" />
 
             <Button
+                android:id="@+id/btn_ptr_2_bucket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -73,16 +71,13 @@
                 android:text="@string/bucket" />
 
             <Button
+                android:id="@+id/btn_ptr_2_miss"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="@dimen/activity_horizontal_margin"
                 android:text="@string/miss_bucket" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_menu_revert" />
 
             <TextView
                 android:id="@+id/pt_2_score_board"
@@ -105,6 +100,7 @@
                 android:text="@string/pt_1" />
 
             <Button
+                android:id="@+id/btn_ptr_1_bucket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -112,16 +108,14 @@
                 android:text="@string/bucket" />
 
             <Button
+                android:id="@+id/btn_ptr_1_miss"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="@dimen/activity_horizontal_margin"
                 android:text="@string/miss_bucket" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_menu_revert" />
+
 
             <TextView
                 android:id="@+id/pt_1_score_board"
@@ -144,6 +138,7 @@
                 android:text="@string/rebound" />
 
             <Button
+                android:id="@+id/btn_def_reb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -151,19 +146,17 @@
                 android:text="@string/defensive_rebound" />
 
             <Button
+                android:id="@+id/btn_off_reb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="@dimen/activity_horizontal_margin"
                 android:text="@string/offensive_rebound" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_menu_revert" />
+
 
             <TextView
-                android:id="@+id/rebound_score_board"
+                android:id="@+id/rebound_board"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -183,20 +176,16 @@
                 android:text="@string/faul" />
 
             <Button
+
+                android:id="@+id/btn_faul"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="@dimen/activity_horizontal_margin"
                 android:text="@string/add" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@android:drawable/ic_menu_revert" />
-
             <TextView
-                android:id="@+id/faul_score_board"
+                android:id="@+id/faul_board"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -210,20 +199,15 @@
                 android:text="@string/turnover" />
 
             <Button
+                android:id="@+id/btn_turnover"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="@dimen/activity_horizontal_margin"
                 android:text="@string/add" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@android:drawable/ic_menu_revert" />
-
             <TextView
-                android:id="@+id/turnover_score_board"
+                android:id="@+id/turnover_board"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -243,20 +227,15 @@
                 android:text="@string/block" />
 
             <Button
+                android:id="@+id/btn_block"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="@dimen/activity_horizontal_margin"
                 android:text="@string/add" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@android:drawable/ic_menu_revert" />
-
             <TextView
-                android:id="@+id/block_score_board"
+                android:id="@+id/block_board"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -270,20 +249,16 @@
                 android:text="@string/steal" />
 
             <Button
+                android:id="@+id/btn_steal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="@dimen/activity_horizontal_margin"
                 android:text="@string/add" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@android:drawable/ic_menu_revert" />
 
             <TextView
-                android:id="@+id/steal_score_board"
+                android:id="@+id/steal_board"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
