@@ -21,7 +21,7 @@
   </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/GameContentProvider.java" line="96" />
-    <bookmark url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml" line="251" />
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml" line="249" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec485f72-2714-40c2-b1b6-6b3fdae27497" name="Default" comment="">
@@ -30,17 +30,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-23.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-23.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/DatabaseContract.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/DatabaseContract.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/GameContentProvider.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/GameContentProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
@@ -57,42 +49,6 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="fragment_scoreboard_main.xml" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml">
-                <provider editor-type-id="android-designer">
-                  <state />
-                </provider>
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.76313895">
-                    <caret line="158" column="46" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="46" />
-                    <folding>
-                      <element signature="e#1153#1188#0" expanded="true" />
-                      <element signature="e#1218#1232#0" expanded="true" />
-                      <element signature="e#1487#1522#0" expanded="true" />
-                      <element signature="e#1552#1568#0" expanded="true" />
-                      <element signature="e#2910#2945#0" expanded="true" />
-                      <element signature="e#2975#2991#0" expanded="true" />
-                      <element signature="e#3244#3279#0" expanded="true" />
-                      <element signature="e#3309#3330#0" expanded="true" />
-                      <element signature="e#6099#6134#0" expanded="true" />
-                      <element signature="e#6164#6191#0" expanded="true" />
-                      <element signature="e#10009#10044#0" expanded="true" />
-                      <element signature="e#10074#10087#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="BBallerScoreBoard" />
@@ -102,12 +58,11 @@
       <file leaf-file-name="ScoreBoardMainFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3009009">
-              <caret line="174" column="39" selection-start-line="174" selection-start-column="39" selection-end-line="174" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.6972973">
+              <caret line="91" column="67" selection-start-line="91" selection-start-column="67" selection-end-line="91" selection-end-column="67" />
               <folding>
                 <element signature="e#3560#3832#0" expanded="true" />
                 <element signature="e#3831#3832#0" expanded="true" />
-                <element signature="e#3875#4148#0" expanded="true" />
                 <element signature="e#4147#4148#0" expanded="true" />
                 <element signature="e#4193#4465#0" expanded="true" />
                 <element signature="e#4464#4465#0" expanded="true" />
@@ -127,6 +82,7 @@
                 <element signature="e#6777#6778#0" expanded="true" />
                 <element signature="e#6819#7105#0" expanded="true" />
                 <element signature="e#7104#7105#0" expanded="true" />
+                <element signature="e#7145#7419#0" expanded="true" />
                 <element signature="e#7418#7419#0" expanded="true" />
               </folding>
             </state>
@@ -1824,24 +1780,24 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/Helper/CommonConstants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-zh/strings_zh.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/scoreboard_activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/helper/DatabaseContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/helper/DatabaseHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/GameContentProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main_2.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/DatabaseContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="174" />
-    <option name="y" value="33" />
+    <option name="x" value="64" />
+    <option name="y" value="16" />
     <option name="width" value="1156" />
     <option name="height" value="1024" />
   </component>
@@ -2000,6 +1956,24 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Gradle Scripts" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BBallerScoreBoard" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2203,7 +2177,7 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../../Software/Matrix/SDKs/AndroidSDK" />
-    <property name="device.picker.selection" value="84B5T15A29018833" />
+    <property name="device.picker.selection" value="881917f8" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -2496,7 +2470,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="174" y="33" width="1156" height="1024" extended-state="0" />
+    <frame x="64" y="16" width="1156" height="1024" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290993" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2713,22 +2687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.1538463">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-zh/strings_zh.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6936416">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/helpers/CommonConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2810,30 +2768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76313895">
-          <caret line="158" column="46" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="46" />
-          <folding>
-            <element signature="e#1153#1188#0" expanded="true" />
-            <element signature="e#1218#1232#0" expanded="true" />
-            <element signature="e#1487#1522#0" expanded="true" />
-            <element signature="e#1552#1568#0" expanded="true" />
-            <element signature="e#2910#2945#0" expanded="true" />
-            <element signature="e#2975#2991#0" expanded="true" />
-            <element signature="e#3244#3279#0" expanded="true" />
-            <element signature="e#3309#3330#0" expanded="true" />
-            <element signature="e#6099#6134#0" expanded="true" />
-            <element signature="e#6164#6191#0" expanded="true" />
-            <element signature="e#10009#10044#0" expanded="true" />
-            <element signature="e#10074#10087#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../Software/Matrix/SDKs/AndroidSDK/sources/android-23/android/os/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2888,14 +2822,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-zh/strings_zh.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24911033">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2990654">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24478042">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#483#516#0" expanded="true" />
+            <element signature="e#545#580#0" expanded="true" />
+            <element signature="e#610#645#0" expanded="true" />
+            <element signature="e#673#706#0" expanded="true" />
+            <element signature="e#794#2208#0" expanded="false" />
+            <element signature="e#1153#1188#0" expanded="true" />
+            <element signature="e#1218#1232#0" expanded="true" />
+            <element signature="e#1487#1522#0" expanded="true" />
+            <element signature="e#1552#1568#0" expanded="true" />
+            <element signature="e#1821#1856#0" expanded="true" />
+            <element signature="e#1886#1907#0" expanded="true" />
+            <element signature="e#2162#2181#0" expanded="true" />
+            <element signature="e#2218#3631#0" expanded="false" />
+            <element signature="e#2577#2612#0" expanded="true" />
+            <element signature="e#2642#2656#0" expanded="true" />
+            <element signature="e#2911#2946#0" expanded="true" />
+            <element signature="e#2976#2992#0" expanded="true" />
+            <element signature="e#3245#3280#0" expanded="true" />
+            <element signature="e#3310#3331#0" expanded="true" />
+            <element signature="e#3585#3604#0" expanded="true" />
+            <element signature="e#3641#5055#0" expanded="false" />
+            <element signature="e#4000#4035#0" expanded="true" />
+            <element signature="e#4065#4079#0" expanded="true" />
+            <element signature="e#4334#4369#0" expanded="true" />
+            <element signature="e#4399#4415#0" expanded="true" />
+            <element signature="e#4668#4703#0" expanded="true" />
+            <element signature="e#4733#4754#0" expanded="true" />
+            <element signature="e#5009#5028#0" expanded="true" />
+            <element signature="e#5065#6488#0" expanded="false" />
+            <element signature="e#5424#5459#0" expanded="true" />
+            <element signature="e#5489#5506#0" expanded="true" />
+            <element signature="e#5756#5791#0" expanded="true" />
+            <element signature="e#5821#5848#0" expanded="true" />
+            <element signature="e#6098#6133#0" expanded="true" />
+            <element signature="e#6163#6190#0" expanded="true" />
+            <element signature="e#6442#6461#0" expanded="true" />
+            <element signature="e#6498#8435#0" expanded="false" />
+            <element signature="e#6857#6892#0" expanded="true" />
+            <element signature="e#6922#6936#0" expanded="true" />
+            <element signature="e#7184#7219#0" expanded="true" />
+            <element signature="e#7249#7262#0" expanded="true" />
+            <element signature="e#7510#7524#0" expanded="true" />
+            <element signature="e#7730#7765#0" expanded="true" />
+            <element signature="e#7795#7813#0" expanded="true" />
+            <element signature="e#8064#8099#0" expanded="true" />
+            <element signature="e#8129#8142#0" expanded="true" />
+            <element signature="e#8394#8408#0" expanded="true" />
+            <element signature="e#8445#10376#0" expanded="false" />
+            <element signature="e#8804#8839#0" expanded="true" />
+            <element signature="e#8869#8884#0" expanded="true" />
+            <element signature="e#9132#9167#0" expanded="true" />
+            <element signature="e#9197#9210#0" expanded="true" />
+            <element signature="e#9459#9473#0" expanded="true" />
+            <element signature="e#9679#9714#0" expanded="true" />
+            <element signature="e#9744#9759#0" expanded="true" />
+            <element signature="e#10007#10042#0" expanded="true" />
+            <element signature="e#10072#10085#0" expanded="true" />
+            <element signature="e#10335#10349#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3009009">
-          <caret line="174" column="39" selection-start-line="174" selection-start-column="39" selection-end-line="174" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.6972973">
+          <caret line="91" column="67" selection-start-line="91" selection-start-column="67" selection-end-line="91" selection-end-column="67" />
           <folding>
             <element signature="e#3560#3832#0" expanded="true" />
             <element signature="e#3831#3832#0" expanded="true" />
-            <element signature="e#3875#4148#0" expanded="true" />
             <element signature="e#4147#4148#0" expanded="true" />
             <element signature="e#4193#4465#0" expanded="true" />
             <element signature="e#4464#4465#0" expanded="true" />
@@ -2915,6 +2934,7 @@
             <element signature="e#6777#6778#0" expanded="true" />
             <element signature="e#6819#7105#0" expanded="true" />
             <element signature="e#7104#7105#0" expanded="true" />
+            <element signature="e#7145#7419#0" expanded="true" />
             <element signature="e#7418#7419#0" expanded="true" />
           </folding>
         </state>
