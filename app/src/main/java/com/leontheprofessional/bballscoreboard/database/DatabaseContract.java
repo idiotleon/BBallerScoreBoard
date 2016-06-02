@@ -13,8 +13,13 @@ public final class DatabaseContract{
     // Todo: change it to real DateTimeType
     public static final String TYPE_DATETIME = " TEXT";
 
+    public static final int SHOT_MADE = 1;
+    public static final int SHOT_MISS = 2;
+
     public static final String AUTHORITY = "com.leontheprofessional.bballscoreboard";
-    public static final String URL_PERFORMANCE = "content://" + AUTHORITY + "/performance/#";
+    public static final String URL_PERFORMANCE = "content://" + AUTHORITY + "/performance/";
+    public static final String URL_PERFORMANCE_PT2_MISSED = "pt2missed/";
+    public static final String URL_PERFORMANCE_PT2_MADE = "pt2made/";
     public static final String URL_PERFORMANCES = "content://" + AUTHORITY + "/performances";
     public static final Uri CONTENT_URI_PERFORMANCE = Uri.parse(URL_PERFORMANCE);
     public static final Uri CONTENT_URI_PERFORMANCES = Uri.parse(URL_PERFORMANCES);
@@ -26,7 +31,7 @@ public final class DatabaseContract{
             DatabaseContract.PerformanceTable.COLUMN_PT_1,
             DatabaseContract.PerformanceTable.COLUMN_STEAL,
             DatabaseContract.PerformanceTable.COLUMN_OFF_REB,
-            DatabaseContract.PerformanceTable.COLUMN_Def_REB,
+            DatabaseContract.PerformanceTable.COLUMN_DEF_REB,
             DatabaseContract.PerformanceTable.COLUMN_FAUL,
             DatabaseContract.PerformanceTable.COLUMN_TURNOVER,
             DatabaseContract.PerformanceTable.COLUMN_BLOCK,
@@ -42,7 +47,7 @@ public final class DatabaseContract{
             PerformanceTable.COLUMN_PT_1 + TYPE_INTEGER + COMMA_SEPARATOR +
             PerformanceTable.COLUMN_STEAL + TYPE_INTEGER + COMMA_SEPARATOR +
             PerformanceTable.COLUMN_OFF_REB + TYPE_INTEGER + COMMA_SEPARATOR +
-            PerformanceTable.COLUMN_Def_REB + TYPE_INTEGER + COMMA_SEPARATOR +
+            PerformanceTable.COLUMN_DEF_REB + TYPE_INTEGER + COMMA_SEPARATOR +
             PerformanceTable.COLUMN_FAUL + TYPE_INTEGER + COMMA_SEPARATOR +
             PerformanceTable.COLUMN_TURNOVER + TYPE_INTEGER + COMMA_SEPARATOR +
             PerformanceTable.COLUMN_BLOCK + TYPE_INTEGER + COMMA_SEPARATOR +
@@ -64,7 +69,7 @@ public final class DatabaseContract{
         public static final String COLUMN_PT_1 = "pt_1";
         public static final String COLUMN_STEAL = "steal";
         public static final String COLUMN_OFF_REB = "offensive_reb";
-        public static final String COLUMN_Def_REB = "defensive_reb";
+        public static final String COLUMN_DEF_REB = "defensive_reb";
         public static final String COLUMN_FAUL = "faul";
         public static final String COLUMN_TURNOVER = "turnover";
         public static final String COLUMN_BLOCK = "block";
