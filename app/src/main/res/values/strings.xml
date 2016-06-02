@@ -12,6 +12,7 @@
     <string name="steal">Steal</string>
     <string name="add">Add</string>
     <string name="faul">Faul</string>
+    <string name="faul_out">Faul Out</string>
     <string name="turnover">Turnover</string>
     <string name="block">Block</string>
     <string name="zero">0</string>
