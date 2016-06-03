@@ -12,7 +12,7 @@
         jar="E:\Downloads\Github\BBallerScoreBoard\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="c84ae3cec5eedc1629fadce0a55738d10ee3ed64">
+        sha1="bf7d7bd4b0a4161e796b77a7f57d9fe35886f846">
         <dex dex="E:\Downloads\Github\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_d2a6499b3dba31f0939b3f083ffcb095a7e1873c\classes.dex" />
     </item>
     <item
@@ -54,7 +54,7 @@
         jar="E:\Downloads\Github\BBallerScoreBoard\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="2a31d7ac3ef83a4a50d1ed1eef99f59ee7ce9211">
+        sha1="c74d4b3631e896e82a07fd5f737f97ca814f03be">
         <dex dex="E:\Downloads\Github\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_9dfd94f0b1a20e145d76f9bf27b1fd2c53f7232c\classes.dex" />
     </item>
     <item

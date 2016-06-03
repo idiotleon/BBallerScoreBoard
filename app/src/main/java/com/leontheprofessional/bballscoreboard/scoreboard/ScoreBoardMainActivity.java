@@ -27,9 +27,9 @@ public class ScoreBoardMainActivity extends AppCompatActivity {
 
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.scoreboard_activity_main_tab_layout);
 
+        tabLayout.addTab(tabLayout.newTab().setText("14"));
         tabLayout.addTab(tabLayout.newTab().setText("10"));
         tabLayout.addTab(tabLayout.newTab().setText("5"));
-        tabLayout.addTab(tabLayout.newTab().setText("14"));
         tabLayout.addTab(tabLayout.newTab().setText("6"));
         tabLayout.addTab(tabLayout.newTab().setText("7"));
         tabLayout.addTab(tabLayout.newTab().setText("21"));
@@ -61,6 +61,7 @@ public class ScoreBoardMainActivity extends AppCompatActivity {
                 Log.v(LOG_TAG, "JerseyNumber: " + jerseyNumber);
                 */
                 bundle.putInt(CommonConstants.JERSEY_NUMBER_IDENTIFIER, position);
+                Log.v(LOG_TAG, "tab position: " + position);
                 scoreBoardMainFragment.setArguments(bundle);
                 return scoreBoardMainFragment;
             }
