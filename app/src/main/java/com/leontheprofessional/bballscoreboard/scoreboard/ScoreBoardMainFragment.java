@@ -59,7 +59,7 @@ public class ScoreBoardMainFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_scoreboard_main, container, false);
 
         jerseyNumber = getArguments().getInt(CommonConstants.JERSEY_NUMBER_IDENTIFIER);
-        Log.v(LOG_TAG, "JerseyNumber, ScoreBoardMainFragment: " + jerseyNumber);
+        Log.v(LOG_TAG, "JerseyNumber: " + jerseyNumber);
 
         btnPtr2Bucket = (Button) view.findViewById(R.id.btn_ptr_2_bucket);
         btnPtr2Miss = (Button) view.findViewById(R.id.btn_ptr_2_miss);
