@@ -28,4 +28,5 @@
     <string name="position_team">Position</string>
     <string name="team_main_activity">Team</string>
     <string name="team_name_title">Team Name</string>
+    <string name="jersey_number_team">JerseyNumber</string>
 </resources>
