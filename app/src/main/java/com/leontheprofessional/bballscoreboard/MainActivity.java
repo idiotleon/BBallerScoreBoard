@@ -11,19 +11,30 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.leontheprofessional.bballscoreboard.scoreboard.ScoreBoardMainActivity;
+import com.leontheprofessional.bballscoreboard.team.TeamMainActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button scoreBoardMainActivityBtn;
-    private Button statisticsMainActivityBtn;
+    private Button scoreBoardBtnMainActivity;
+    private Button statisticsBtnMainActivity;
+    private Button teamBtnMainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        scoreBoardMainActivityBtn = (Button) findViewById(R.id.scoreboard_btn_main_activity);
-        scoreBoardMainActivityBtn.setOnClickListener(new View.OnClickListener() {
+        teamBtnMainActivity = (Button) findViewById(R.id.team_btn_main_activity);
+        teamBtnMainActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent teamIntent = new Intent(MainActivity.this, TeamMainActivity.class);
+                startActivity(teamIntent);
+            }
+        });
+
+        scoreBoardBtnMainActivity = (Button) findViewById(R.id.scoreboard_btn_main_activity);
+        scoreBoardBtnMainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ScoreBoardMainActivity.class);
@@ -31,13 +42,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        statisticsMainActivityBtn = (Button) findViewById(R.id.statistic_btn_main_activity);
-        statisticsMainActivityBtn.setOnClickListener(new View.OnClickListener() {
+        statisticsBtnMainActivity = (Button) findViewById(R.id.statistic_btn_main_activity);
+        statisticsBtnMainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Statistics will be added shortly.", Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
 
     @Override

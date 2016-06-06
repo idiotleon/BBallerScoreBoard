@@ -16,19 +16,28 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:orientation="vertical">
-    <Button
-        android:id="@+id/scoreboard_btn_main_activity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/scoreboard_main_activity"
-        android:textSize="16sp"/>
 
-    <Button
-        android:id="@+id/statistic_btn_main_activity"
-        android:layout_centerVertical="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/statistics_main_activity"
-        android:textSize="16sp"/>
+        <Button
+            android:id="@+id/team_btn_main_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/team_main_activity"
+            android:textSize="@dimen/text_size_16sp" />
 
-    </LinearLayout></RelativeLayout>
+        <Button
+            android:id="@+id/scoreboard_btn_main_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/scoreboard_main_activity"
+            android:textSize="@dimen/text_size_16sp" />
+
+        <Button
+            android:id="@+id/statistic_btn_main_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/statistics_main_activity"
+            android:textSize="@dimen/text_size_16sp" />
+
+    </LinearLayout>
+</RelativeLayout>

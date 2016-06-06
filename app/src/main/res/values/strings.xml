@@ -23,4 +23,9 @@
     <string name="statistics_main_activity">Statistics</string>
 
     <string name="login">LogIn</string>
+    <string name="first_name_team">FirstName</string>
+    <string name="last_name_team">LastName</string>
+    <string name="position_team">Position</string>
+    <string name="team_main_activity">Team</string>
+    <string name="team_name_title">Team Name</string>
 </resources>

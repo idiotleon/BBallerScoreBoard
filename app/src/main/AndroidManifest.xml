@@ -26,11 +26,14 @@
                 <category android:name="android.intent.category.DEFAULT"></category>
             </intent-filter>
         </activity>
-        
+
+        <activity android:name=".team.TeamMainActivity"></activity>
+
+        <activity android:name=".player.PlayerMainActivity"></activity>
+
         <provider
-            android:authorities="com.leontheprofessional.bballscoreboard"
-            android:name=".database.GameContentProvider">
-        </provider>
+            android:name=".database.GameContentProvider"
+            android:authorities="com.leontheprofessional.bballscoreboard"></provider>
     </application>
 
 </manifest>
