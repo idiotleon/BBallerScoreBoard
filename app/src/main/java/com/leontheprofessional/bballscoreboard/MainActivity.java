@@ -10,22 +10,33 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.leontheprofessional.bballscoreboard.player.PlayerMainActivity;
 import com.leontheprofessional.bballscoreboard.scoreboard.ScoreBoardMainActivity;
 import com.leontheprofessional.bballscoreboard.team.TeamMainActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button scoreBoardBtnMainActivity;
-    private Button statisticsBtnMainActivity;
-    private Button teamBtnMainActivity;
+    private Button btnPlayerBtnMainActivity;
+    private Button btnTeamMainActivity;
+    private Button btnScoreBoardMainActivity;
+    private Button btnStatisticsMainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        teamBtnMainActivity = (Button) findViewById(R.id.team_btn_main_activity);
-        teamBtnMainActivity.setOnClickListener(new View.OnClickListener() {
+        btnPlayerBtnMainActivity = (Button) findViewById(R.id.btn_player_main_activity);
+        btnPlayerBtnMainActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent playerIntent = new Intent(MainActivity.this, PlayerMainActivity.class);
+                startActivity(playerIntent);
+            }
+        });
+
+        btnTeamMainActivity = (Button) findViewById(R.id.btn_team_main_activity);
+        btnTeamMainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent teamIntent = new Intent(MainActivity.this, TeamMainActivity.class);
@@ -33,8 +44,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        scoreBoardBtnMainActivity = (Button) findViewById(R.id.scoreboard_btn_main_activity);
-        scoreBoardBtnMainActivity.setOnClickListener(new View.OnClickListener() {
+
+        btnScoreBoardMainActivity = (Button) findViewById(R.id.scoreboard_btn_main_activity);
+        btnScoreBoardMainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ScoreBoardMainActivity.class);
@@ -42,15 +54,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        statisticsBtnMainActivity = (Button) findViewById(R.id.statistic_btn_main_activity);
-        statisticsBtnMainActivity.setOnClickListener(new View.OnClickListener() {
+        btnStatisticsMainActivity = (Button) findViewById(R.id.statistic_btn_main_activity);
+        btnStatisticsMainActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Statistics will be added shortly.", Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 
     @Override

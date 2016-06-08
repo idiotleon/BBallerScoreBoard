@@ -10,43 +10,13 @@ public final class DatabaseContract {
     public static final String DATABASE_NAME = "scoreboard.db";
     public static final String COMMA_SEPARATOR = ", ";
     public static final String TYPE_INTEGER = " INTEGER";
+    public static final String TYPE_TEXT = " TEXT";
     // Todo: change it to real DateTimeType
     public static final String TYPE_DATETIME = " TEXT";
+    public static final String COLUMN_TIMESTAMP = "datetimestamp";
 
     // All data of all players in a game
     public static final String AUTHORITY = "com.leontheprofessional.bballscoreboard";
-    public static final String URL_PERFORMANCES = "content://" + AUTHORITY + "/performances";
-    public static final Uri CONTENT_URI_PERFORMANCES = Uri.parse(URL_PERFORMANCES);
-    public static final String[] projectionForAll = {
-            DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER,
-            DatabaseContract.PerformanceTable.COLUMN_PT_3,
-            DatabaseContract.PerformanceTable.COLUMN_PT_2,
-            DatabaseContract.PerformanceTable.COLUMN_PT_1,
-            DatabaseContract.PerformanceTable.COLUMN_STEAL,
-            DatabaseContract.PerformanceTable.COLUMN_OFF_REB,
-            DatabaseContract.PerformanceTable.COLUMN_DEF_REB,
-            DatabaseContract.PerformanceTable.COLUMN_FAUL,
-            DatabaseContract.PerformanceTable.COLUMN_TURNOVER,
-            DatabaseContract.PerformanceTable.COLUMN_BLOCK,
-            DatabaseContract.PerformanceTable.COLUMN_TIMESTAMP
-    };
-
-    public static final String TABLE_CREATION = "CREATE TABLE " +
-            PerformanceTable.TABLE_NAME + " (" +
-            "_id" + TYPE_INTEGER + " PRIMARY KEY AUTOINCREMENT, " +
-            PerformanceTable.COLUMN_JERSEY_NUMBER + " INTEGER" + COMMA_SEPARATOR +
-            PerformanceTable.COLUMN_PT_3 + TYPE_INTEGER + COMMA_SEPARATOR +
-            PerformanceTable.COLUMN_PT_2 + TYPE_INTEGER + COMMA_SEPARATOR +
-            PerformanceTable.COLUMN_PT_1 + TYPE_INTEGER + COMMA_SEPARATOR +
-            PerformanceTable.COLUMN_STEAL + TYPE_INTEGER + COMMA_SEPARATOR +
-            PerformanceTable.COLUMN_OFF_REB + TYPE_INTEGER + COMMA_SEPARATOR +
-            PerformanceTable.COLUMN_DEF_REB + TYPE_INTEGER + COMMA_SEPARATOR +
-            PerformanceTable.COLUMN_FAUL + TYPE_INTEGER + COMMA_SEPARATOR +
-            PerformanceTable.COLUMN_TURNOVER + TYPE_INTEGER + COMMA_SEPARATOR +
-            PerformanceTable.COLUMN_BLOCK + TYPE_INTEGER + COMMA_SEPARATOR +
-            PerformanceTable.COLUMN_TIMESTAMP + TYPE_DATETIME + ")";
-
-    public static final String TABLE_DELETION = "DROP TABLE IF EXISTS " + PerformanceTable.TABLE_NAME;
 
 
     // To prevent someone from accidentally instantiating the contract class
@@ -89,12 +59,127 @@ public final class DatabaseContract {
         public static final String COLUMN_FAUL = "faul";
         public static final String COLUMN_TURNOVER = "turnover";
         public static final String COLUMN_BLOCK = "block";
-        public static final String COLUMN_TIMESTAMP = "datetimestamp";
+
+        public static final String URL_PERFORMANCES = "content://" + AUTHORITY + "/performances";
+        public static final Uri CONTENT_URI_PERFORMANCES = Uri.parse(URL_PERFORMANCES);
+        public static final String[] projectionForAllPerformanceTable = {
+                COLUMN_JERSEY_NUMBER,
+                COLUMN_PT_3,
+                COLUMN_PT_2,
+                COLUMN_PT_1,
+                COLUMN_STEAL,
+                COLUMN_OFF_REB,
+                COLUMN_DEF_REB,
+                COLUMN_FAUL,
+                COLUMN_TURNOVER,
+                COLUMN_BLOCK,
+                COLUMN_TIMESTAMP
+        };
+
 
         public static final String PERFORMANCE_CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
                 "vnd." + AUTHORITY + ".performances";
         public static final String PERFORMANCE_CONTENT_ITEM_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
                 "vnd." + AUTHORITY + ".performance";
+
+        public static final String PERFORMANCE_TABLE_CREATION = "CREATE TABLE " +
+                TABLE_NAME + " (" +
+                "_id" + TYPE_INTEGER + " PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_JERSEY_NUMBER + " INTEGER" + COMMA_SEPARATOR +
+                COLUMN_PT_3 + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_PT_2 + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_PT_1 + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_STEAL + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_OFF_REB + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_DEF_REB + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_FAUL + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_TURNOVER + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_BLOCK + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_TIMESTAMP + TYPE_DATETIME + ")";
+
+        public static final String PERFORMANCE_TABLE_DELETION = "DROP TABLE IF EXISTS " + TABLE_NAME;
+
+    }
+
+    public static abstract class PlayerTable implements BaseColumns {
+
+        public static final String TABLE_NAME = "player_table";
+
+        public static final String URL_PLAYER = "content://" + AUTHORITY + "/player/";
+        public static final String URL_PLAYER_BY_JERSEY_NUMBER = "by_jsersey_number/";
+        public static final String URL_PLAYER_BY_FIRST_NAME = "by_first_name/";
+        public static final String URL_PLAYER_BY_LAST_NAME = "by_last_name/";
+        public static final String URL_PLAYER_BY_HEIGHT = "by_height/";
+        public static final String URL_PLAYER_BY_WEIGHT = "by_weight/";
+        public static final String URL_PLAYER_BY_POSITION = "by_position/";
+
+        public static final String COLUMN_PLAYER_FIRST_NAME = "first_name";
+        public static final String COLUMN_PLAYER_LAST_NAME = "last_name";
+        public static final String COLUMN_PLAYER_JERSEY_NUMBER = "jersey_number";
+        // todo: enumeration type for sqlite database
+        public static final String COLUMN_POSITION = "position";
+        public static final String COLUMN_PLAYER_HEIGHT = "player_height";
+        public static final String COLUMN_PLAYER_WEIGHT = "player_weight";
+        public static final String COLUMN_PLAYER_TEAM = "player_team";
+
+        public static final String PLAYER_TABLE_CREATION = "CREATE TABLE " +
+                TABLE_NAME + " (" +
+                "_id" + TYPE_INTEGER + " PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_PLAYER_FIRST_NAME + TYPE_TEXT + COMMA_SEPARATOR +
+                COLUMN_PLAYER_LAST_NAME + TYPE_TEXT + COMMA_SEPARATOR +
+                COLUMN_PLAYER_JERSEY_NUMBER + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_POSITION + TYPE_TEXT + COMMA_SEPARATOR +
+                COLUMN_PLAYER_HEIGHT + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_PLAYER_WEIGHT + TYPE_INTEGER + COMMA_SEPARATOR +
+                // todo: foreign key
+                COLUMN_PLAYER_TEAM + TYPE_TEXT + COMMA_SEPARATOR +
+                COLUMN_TIMESTAMP + TYPE_DATETIME + ")";
+
+        public static final String PLAYER_TABLE_DELETION = "DROP TABLE IF EXISTS " + TABLE_NAME;
+
+        public static final String PLAYERS_CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
+                "vnd." + AUTHORITY + ".players";
+        public static final String PLAYER_CONTENT_ITEM_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
+                "vnd." + AUTHORITY + ".player";
+
+        public static final String URL_PLAYERS = "content://" + AUTHORITY + "/players";
+        public static final Uri CONTENT_URI_PLAYERS = Uri.parse(URL_PLAYERS);
+        public static final String[] projectionForAllPlayerTable = {
+                COLUMN_PLAYER_FIRST_NAME,
+                COLUMN_PLAYER_LAST_NAME,
+                COLUMN_PLAYER_JERSEY_NUMBER,
+                COLUMN_PLAYER_HEIGHT,
+                COLUMN_PLAYER_WEIGHT,
+                COLUMN_PLAYER_TEAM,
+                COLUMN_TIMESTAMP
+        };
+    }
+
+    public static abstract class TeamTable implements BaseColumns {
+
+        public static final String TABLE_NAME = "team_table";
+
+        public static final String COLUMN_TEAM_NAME = "team_name";
+
+        public static final String TEAM_TABLE_CREATION = "CREATE TABLE " +
+                TABLE_NAME + " (" +
+                "_id" + TYPE_INTEGER + " PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_TEAM_NAME + TYPE_TEXT + COMMA_SEPARATOR +
+                COLUMN_TIMESTAMP + TYPE_DATETIME + ")";
+
+        public static final String TEAM_TABLE_DELETION = "DROP TABLE IF EXISTS " + TABLE_NAME;
+
+        public static final String TEAM_CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
+                "vnd." + AUTHORITY + ".teams";
+        public static final String TEAM_CONTENT_ITEM_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
+                "vnd." + AUTHORITY + ".team";
+
+        public static final String URL_TEAMS = "content://" + AUTHORITY + "/teams";
+        public static final Uri CONTENT_URI_TEAMS = Uri.parse(URL_TEAMS);
+        public static final String[] projectionForAllTeamTable = {
+                COLUMN_TEAM_NAME,
+                COLUMN_TIMESTAMP
+        };
     }
 
     public static abstract class Pt3Table implements BaseColumns {
@@ -152,6 +237,4 @@ public final class DatabaseContract {
         public static final String COLUMN_BLOCK_TOTAL = "block_total";
         public static final String COLUMNn_DATE = "timestamp";
     }
-
-
 }

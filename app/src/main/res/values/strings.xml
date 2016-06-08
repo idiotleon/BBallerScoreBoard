@@ -29,4 +29,21 @@
     <string name="team_main_activity">Team</string>
     <string name="team_name_title">Team Name</string>
     <string name="jersey_number_team">JerseyNumber</string>
+    <string name="first_name_player_activity">First Name</string>
+    <string name="last_name_player_activity">Last Name</string>
+    <string name="jersey_number_player_activity">Jersey Number</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="height_player_activity">Height</string>
+    <string name="weight_player_activity">Weight</string>
+    <string name="player_main_activity">Player</string>
+    <string name="name_anonymous">anonymous</string>
+
+    <string-array name="player_position">
+        <item>Center</item>
+        <item>Big Forward</item>
+        <item>Small Forward</item>
+        <item>Point Guard</item>
+        <item>Shooting Guard</item>
+    </string-array>
 </resources>

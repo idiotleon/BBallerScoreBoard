@@ -27,6 +27,7 @@ public class TeamMainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // todo: when fab here pressed, the app should add team firstly, and then select players as team members
                 Intent playerIntent = new Intent(TeamMainActivity.this, PlayerMainActivity.class);
                 startActivity(playerIntent);
             }

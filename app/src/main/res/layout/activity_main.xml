@@ -18,7 +18,14 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/team_btn_main_activity"
+            android:id="@+id/btn_player_main_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/player_main_activity"
+            android:textSize="@dimen/text_size_12sp" />
+
+        <Button
+            android:id="@+id/btn_team_main_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/team_main_activity"
