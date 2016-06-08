@@ -16,9 +16,13 @@ import android.widget.EditText;
 import com.leontheprofessional.bballscoreboard.R;
 import com.leontheprofessional.bballscoreboard.database.DatabaseContract;
 
-public class AddTeamFragment extends Fragment {
+/**
+ *   This fragment is a popup window/fragment for adding one team
+ */
 
-    private static final String LOG_TAG = AddTeamFragment.class.getSimpleName();
+public class AddOneTeamFragment extends Fragment {
+
+    private static final String LOG_TAG = AddOneTeamFragment.class.getSimpleName();
 
     private Button btnConfirm;
     private Button btnCancel;

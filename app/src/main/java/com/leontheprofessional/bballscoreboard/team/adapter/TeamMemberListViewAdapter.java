@@ -1,4 +1,4 @@
-package com.leontheprofessional.bballscoreboard.team;
+package com.leontheprofessional.bballscoreboard.team.adapter;
 
 import android.content.Context;
 import android.database.Cursor;

@@ -11,6 +11,12 @@ import android.widget.ListView;
 import com.leontheprofessional.bballscoreboard.R;
 import com.leontheprofessional.bballscoreboard.player.PlayerMainActivity;
 
+/**
+ * todo: the first page of TeamActivity should have a list of all teams,
+ * todo: whose FAB will lead to adding teams;
+ * todo: while click on one of the teams will lead to one specific team,
+ * todo: whose FAB will lead to adding players
+ */
 public class TeamMainActivity extends AppCompatActivity {
 
     private ListView teamMemberListView;
