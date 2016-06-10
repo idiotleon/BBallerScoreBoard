@@ -3,6 +3,7 @@ package com.leontheprofessional.bballscoreboard.database;
 import android.content.ContentResolver;
 import android.net.Uri;
 import android.provider.BaseColumns;
+import android.util.Log;
 
 public final class DatabaseContract {
 
@@ -11,6 +12,7 @@ public final class DatabaseContract {
     public static final String COMMA_SEPARATOR = ", ";
     public static final String TYPE_INTEGER = " INTEGER";
     public static final String TYPE_TEXT = " TEXT";
+    public static final String TYPE_BLOB = " BLOB";
     // Todo: change it to real DateTimeType
     public static final String TYPE_DATETIME = " TEXT";
     public static final String COLUMN_TIMESTAMP = "datetimestamp";
@@ -76,7 +78,6 @@ public final class DatabaseContract {
                 COLUMN_TIMESTAMP
         };
 
-
         public static final String PERFORMANCE_CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
                 "vnd." + AUTHORITY + ".performances";
         public static final String PERFORMANCE_CONTENT_ITEM_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
@@ -113,27 +114,27 @@ public final class DatabaseContract {
         public static final String URL_PLAYER_BY_WEIGHT = "by_weight/";
         public static final String URL_PLAYER_BY_POSITION = "by_position/";
 
+        public static final String COLUMN_PLAYER_GENERAL_ID = "_id";
+        public static final String COLUMN_PLAYER_UUID = "uuid";
         public static final String COLUMN_PLAYER_FIRST_NAME = "first_name";
         public static final String COLUMN_PLAYER_LAST_NAME = "last_name";
-        public static final String COLUMN_PLAYER_JERSEY_NUMBER = "jersey_number";
         // todo: enumeration type for sqlite database
         public static final String COLUMN_POSITION = "position";
         public static final String COLUMN_PLAYER_HEIGHT = "player_height";
         public static final String COLUMN_PLAYER_WEIGHT = "player_weight";
-        public static final String COLUMN_PLAYER_TEAM = "player_team";
+        public static final String COLUMN_PLAYER_PROFILE_CREATION_TIMESTAMP = "time_stamp";
 
         public static final String PLAYER_TABLE_CREATION = "CREATE TABLE " +
                 TABLE_NAME + " (" +
-                "_id" + TYPE_INTEGER + " PRIMARY KEY AUTOINCREMENT, " +
+                // todo: uuid for players
+                COLUMN_PLAYER_GENERAL_ID + TYPE_INTEGER + " PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_PLAYER_UUID + TYPE_BLOB + COMMA_SEPARATOR +
                 COLUMN_PLAYER_FIRST_NAME + TYPE_TEXT + COMMA_SEPARATOR +
                 COLUMN_PLAYER_LAST_NAME + TYPE_TEXT + COMMA_SEPARATOR +
-                COLUMN_PLAYER_JERSEY_NUMBER + TYPE_INTEGER + COMMA_SEPARATOR +
                 COLUMN_POSITION + TYPE_TEXT + COMMA_SEPARATOR +
                 COLUMN_PLAYER_HEIGHT + TYPE_INTEGER + COMMA_SEPARATOR +
                 COLUMN_PLAYER_WEIGHT + TYPE_INTEGER + COMMA_SEPARATOR +
-                // todo: foreign key
-                COLUMN_PLAYER_TEAM + TYPE_TEXT + COMMA_SEPARATOR +
-                COLUMN_TIMESTAMP + TYPE_DATETIME + ")";
+                COLUMN_PLAYER_PROFILE_CREATION_TIMESTAMP + TYPE_DATETIME + ")";
 
         public static final String PLAYER_TABLE_DELETION = "DROP TABLE IF EXISTS " + TABLE_NAME;
 
@@ -147,10 +148,8 @@ public final class DatabaseContract {
         public static final String[] projectionForAllPlayerTable = {
                 COLUMN_PLAYER_FIRST_NAME,
                 COLUMN_PLAYER_LAST_NAME,
-                COLUMN_PLAYER_JERSEY_NUMBER,
                 COLUMN_PLAYER_HEIGHT,
                 COLUMN_PLAYER_WEIGHT,
-                COLUMN_PLAYER_TEAM,
                 COLUMN_TIMESTAMP
         };
     }
@@ -159,13 +158,22 @@ public final class DatabaseContract {
 
         public static final String TABLE_NAME = "team_table";
 
+        public static final String COLUMN_GENERAL_ID = "_id";
+        public static final String COLUMN_UUID = "team_uuid";
         public static final String COLUMN_TEAM_NAME = "team_name";
+        public static final String COLUMN_PLAYER_JERSEY_NUMBER = "player_jersey_number_team";
+        public static final String COLUMN_PLAYER_UUID = "player_uuid_team";
+        public static final String COLUMN_TEAM_PROFILE_CREATION_TIMESTAMP = "time_stamp";
 
         public static final String TEAM_TABLE_CREATION = "CREATE TABLE " +
                 TABLE_NAME + " (" +
-                "_id" + TYPE_INTEGER + " PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_GENERAL_ID + TYPE_INTEGER + " PRIMARY KEY AUTOINCREMENT" + COMMA_SEPARATOR +
+                COLUMN_UUID + TYPE_BLOB + COMMA_SEPARATOR +
                 COLUMN_TEAM_NAME + TYPE_TEXT + COMMA_SEPARATOR +
-                COLUMN_TIMESTAMP + TYPE_DATETIME + ")";
+                COLUMN_TEAM_PROFILE_CREATION_TIMESTAMP + TYPE_DATETIME + COMMA_SEPARATOR +
+                COLUMN_PLAYER_UUID + TYPE_BLOB + COMMA_SEPARATOR +
+                " UNIQUE(" + COLUMN_PLAYER_JERSEY_NUMBER + COMMA_SEPARATOR + COLUMN_PLAYER_UUID + ")" +
+                ")";
 
         public static final String TEAM_TABLE_DELETION = "DROP TABLE IF EXISTS " + TABLE_NAME;
 
@@ -180,6 +188,19 @@ public final class DatabaseContract {
                 COLUMN_TEAM_NAME,
                 COLUMN_TIMESTAMP
         };
+    }
+
+    public static abstract class GameTable implements BaseColumns {
+
+        public static final String TABLE_NAME = "game_table";
+
+        public static final String COLUMN_HOST_TEAM_UUID = "host_game_uuid";
+        public static final String COLUMN_GUEST_TEAM_UUID = "guest_game_uuid";
+        public static final String COLUMN_GENERAL_ID = "_id";
+        public static final String COLUMN_UUID = "game_uuid";
+        public static final String COLUMN_STARTING_TIME = "starting_time";
+        public static final String COLUMN_END_TIME = "end_time";
+        public static final String COLUMN_LOCATION = "location";
     }
 
     public static abstract class Pt3Table implements BaseColumns {
