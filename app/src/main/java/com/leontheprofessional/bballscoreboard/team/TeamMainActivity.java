@@ -23,8 +23,8 @@ public class TeamMainActivity extends AppCompatActivity {
     private FloatingActionButton fab;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity_team);
 
         teamMemberListView = (ListView) findViewById(R.id.listview_member_team);

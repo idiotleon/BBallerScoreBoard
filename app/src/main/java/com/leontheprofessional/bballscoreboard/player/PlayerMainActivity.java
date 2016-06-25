@@ -31,10 +31,12 @@ public class PlayerMainActivity extends AppCompatActivity {
 
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.player_main_activity);
         Log.v(LOG_TAG, "onCreate() executed");
+
+        playerContentValue = new ContentValues();
 
         firstNameEditText = (EditText) findViewById(R.id.et_first_name_player_main_activity);
         lastNameEditText = (EditText) findViewById(R.id.et_last_name_player_main_activity);

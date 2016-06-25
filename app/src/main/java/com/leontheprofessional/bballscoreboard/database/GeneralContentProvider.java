@@ -234,7 +234,7 @@ public class GeneralContentProvider extends ContentProvider {
             sortOrder = DatabaseContract.COLUMN_TIMESTAMP + " DESC";
         }
         Cursor cursor = queryBuilder.query(database,
-                DatabaseContract.projectionForAllPerformanceTable,
+                DatabaseContract.PerformanceTable.projectionForAllPerformanceTable,
                 selection,
                 selectionArgs,
                 groupBy,
