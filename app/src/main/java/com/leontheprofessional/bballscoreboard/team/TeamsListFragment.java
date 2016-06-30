@@ -1,11 +1,11 @@
 package com.leontheprofessional.bballscoreboard.team;
 
-import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 
 /**
  *  This Fragment lists all teams
  */
 
-public class TeamsListFragment extends Fragment {
+public class TeamsListFragment extends ListFragment {
 
 }

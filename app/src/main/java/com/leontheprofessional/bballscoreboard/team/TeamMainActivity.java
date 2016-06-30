@@ -27,6 +27,7 @@ public class TeamMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity_team);
 
+        // todo: listing all teams should be done with a standalone fragment: TeamsListFragment
         teamMemberListView = (ListView) findViewById(R.id.listview_member_team);
 
         fab = (FloatingActionButton) findViewById(R.id.fab_team_main_activity);
