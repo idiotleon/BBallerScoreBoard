@@ -4,8 +4,7 @@ import android.content.ContentValues;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.text.format.DateFormat;
+import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,15 +17,18 @@ import android.widget.Spinner;
 import com.leontheprofessional.bballscoreboard.R;
 import com.leontheprofessional.bballscoreboard.database.DatabaseContract;
 
+import java.util.UUID;
+
 /**
  * This fragment is a popup window for adding one player
  */
-public class AddOnePlayerFragment extends Fragment {
+public class AddOnePlayerDialogFragment extends DialogFragment {
 
-    private static final String LOG_TAG = AddOnePlayerFragment.class.getSimpleName();
+    private static final String LOG_TAG = AddOnePlayerDialogFragment.class.getSimpleName();
 
     private Spinner positionSpinner;
     private Button btnConfirm;
+    private Button btnCancel;
     private ContentValues playerContentValue;
     private EditText firstNameEditText;
     private EditText lastNameEditText;
@@ -50,16 +52,18 @@ public class AddOnePlayerFragment extends Fragment {
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(getContext(),
                 R.array.player_position, android.R.layout.simple_spinner_item);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Todo: Set a title for the spinner
+//        positionSpinner.setPrompt(getContext().getResources().getString(R.string.player_position));
         positionSpinner.setAdapter(spinnerAdapter);
         positionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                playerContentValue.put(DatabaseContract.PlayerTable.COLUMN_POSITION, playerPosition[position]);
+                playerContentValue.put(DatabaseContract.PlayerTable.COLUMN_PLAYER_POSITION, playerPosition[position]);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                playerContentValue.put(DatabaseContract.PlayerTable.COLUMN_POSITION, playerPosition[0]);
+                playerContentValue.put(DatabaseContract.PlayerTable.COLUMN_PLAYER_POSITION, playerPosition[0]);
             }
         });
 
@@ -73,14 +77,23 @@ public class AddOnePlayerFragment extends Fragment {
                 String height = heightEditText.getText().toString();
                 String weight = weightEditText.getText().toString();
 
+                // todo: might be wrong with data types
+                playerContentValue.put(DatabaseContract.PlayerTable.COLUMN_PLAYER_UUID, UUID.randomUUID().toString());
                 playerContentValue.put(DatabaseContract.PlayerTable.COLUMN_PLAYER_FIRST_NAME, firstName);
                 playerContentValue.put(DatabaseContract.PlayerTable.COLUMN_PLAYER_LAST_NAME, lastName);
                 playerContentValue.put(DatabaseContract.PlayerTable.COLUMN_PLAYER_HEIGHT, height);
                 playerContentValue.put(DatabaseContract.PlayerTable.COLUMN_PLAYER_WEIGHT, weight);
-                String dateTimeStamp = (DateFormat.format("yyyy-MM-dd hh:mm:ss", new java.util.Date()).toString());
-                playerContentValue.put(DatabaseContract.COLUMN_TIMESTAMP, dateTimeStamp);
+                playerContentValue.put(DatabaseContract.PlayerTable.COLUMN_PLAYER_PROFILE_CREATED_TIMESTAMP, System.currentTimeMillis());
 
-                Uri uri = getContext().getContentResolver().insert(DatabaseContract.PlayerTable.CONTENT_URI_PLAYERS, playerContentValue);
+                // Uri uri = getContext().getContentResolver().insert(DatabaseContract.PlayerTable.CONTENT_URI_PLAYERS, playerContentValue);
+            }
+        });
+
+        btnCancel = (Button) view.findViewById(R.id.btn_cancel_player_main_activity);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getDialog().dismiss();
             }
         });
 
