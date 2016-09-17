@@ -85,7 +85,7 @@ public class AddOnePlayerDialogFragment extends DialogFragment {
                 playerContentValue.put(DatabaseContract.PlayerTable.COLUMN_PLAYER_WEIGHT, weight);
                 playerContentValue.put(DatabaseContract.PlayerTable.COLUMN_PLAYER_PROFILE_CREATED_TIMESTAMP, System.currentTimeMillis());
 
-                // Uri uri = getContext().getContentResolver().insert(DatabaseContract.PlayerTable.CONTENT_URI_PLAYERS, playerContentValue);
+                Uri uri = getContext().getContentResolver().insert(DatabaseContract.PlayerTable.CONTENT_URI_PLAYERS, playerContentValue);
             }
         });
 

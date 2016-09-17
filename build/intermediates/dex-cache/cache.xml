@@ -1,3 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3829de458764a240a9c6cd3c9482a2a3d0deeb3c">
+        <dex dex="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_351810d82238f399a7ee92e9cc588c8237f3be05\classes.dex" />
+    </item>
+    <item
+        jar="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_b6ff1aaba12c58532382d817b9c93c129038bb47\classes.dex" />
+    </item>
+    <item
+        jar="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_b6164aa8d9b44e7f264272b9fa1927f1343a375f\classes.dex" />
+    </item>
+    <item
+        jar="D:\Software\Matrix\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_6eb300e74733a58a8575627d903545ad11d0267d\classes.dex" />
+    </item>
+    <item
+        jar="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.3.0_d70a580f814575c3d5020062a0b990d21cee7a15\classes.dex" />
+    </item>
+    <item
+        jar="D:\Software\Matrix\Android Studio\gradle\m2repository\com\intellij\annotations\12.0\annotations-12.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="bbcf6448f6d40abe506e2c83b70a3e8bfd2b4539">
+        <dex dex="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\annotations-12.0_1ff102a86f261d76211a54e39eded7252fd8704d\classes.dex" />
+    </item>
+    <item
+        jar="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_cda60a311a69c14345809a82a4e17f1b60f702ba\classes.dex" />
+    </item>
+    <item
+        jar="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9dbe5f8a8ec237475dbbb15f8302f741e40805b5">
+        <dex dex="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_e2d73bec5eca2a2236627e21bb755cc5729535a9\classes.dex" />
+    </item>
+    <item
+        jar="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_ae67072ef32b8b48e1b0f4dc58b6dd37cc3e1962\classes.dex" />
+    </item>
+    <item
+        jar="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_8bce55a3a0009b11828c723186aa924b0231cc1a\classes.dex" />
+    </item>
+    <item
+        jar="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="D:\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.3.0_b29624835a902a2d4120d77f82120ecddfeee780\classes.dex" />
+    </item>
+
+</items>

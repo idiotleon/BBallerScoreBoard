@@ -17,7 +17,7 @@ import com.leontheprofessional.bballscoreboard.R;
 import com.leontheprofessional.bballscoreboard.database.DatabaseContract;
 
 /**
- *   This fragment is a popup window/fragment for adding one team
+ * This fragment is a popup window/fragment for adding one team
  */
 
 public class AddOneTeamFragment extends Fragment {
@@ -48,8 +48,7 @@ public class AddOneTeamFragment extends Fragment {
                     teamName = getString(R.string.name_anonymous);
                     teamContentValue.put(DatabaseContract.TeamTable.COLUMN_TEAM_NAME, teamName);
                 }
-                String dateTimeStamp = (DateFormat.format("yyyy-MM-dd hh:mm:ss", new java.util.Date()).toString());
-                teamContentValue.put(DatabaseContract.COLUMN_TIMESTAMP, dateTimeStamp);
+                teamContentValue.put(DatabaseContract.TeamTable.COLUMN_TEAM_PROFILE_CREATED_TIMESTAMP, System.currentTimeMillis());
 
                 Uri uri = getContext().getContentResolver().insert(DatabaseContract.TeamTable.CONTENT_URI_TEAMS, teamContentValue);
                 Log.v(LOG_TAG, uri.toString());

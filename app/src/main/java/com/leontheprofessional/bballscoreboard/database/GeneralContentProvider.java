@@ -9,7 +9,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 
 import com.leontheprofessional.bballscoreboard.database.helper.DatabaseHelper;
@@ -169,7 +168,7 @@ public class GeneralContentProvider extends ContentProvider {
                 break;
             case FAUL_BY_JERSEY_NUMBER:
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
-                        DatabaseContract.PerformanceTable.COLUMN_FAUL + " = ?";
+                        DatabaseContract.PerformanceTable.COLUMN_PERSONAL_FAUL + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.FAUL_COMMITTED);
@@ -223,18 +222,19 @@ public class GeneralContentProvider extends ContentProvider {
                 selectionArgs[0] = (uri.getLastPathSegment().toString());
                 break;
             case PLAYER_BY_POSITION:
-                selection = DatabaseContract.PlayerTable.COLUMN_POSITION + " = ?";
+                selection = DatabaseContract.PlayerTable.COLUMN_PLAYER_POSITION + " = ?";
                 selectionArgs[0] = (uri.getLastPathSegment().toString());
                 break;
             default:
                 throw new IllegalArgumentException("Unkown URI " + uri);
         }
 
-        if (sortOrder == null || sortOrder == "") {
-            sortOrder = DatabaseContract.COLUMN_TIMESTAMP + " DESC";
-        }
+/*        if (sortOrder == null || sortOrder == "") {
+            sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
+        }*/
+        sortOrder = null;
         Cursor cursor = queryBuilder.query(database,
-                DatabaseContract.PerformanceTable.projectionForAllPerformanceTable,
+                DatabaseContract.PerformanceTable.projectionForAll,
                 selection,
                 selectionArgs,
                 groupBy,
@@ -252,7 +252,7 @@ public class GeneralContentProvider extends ContentProvider {
             case PERFORMANCE_BY_JERSEY_NUMBER:
                 return DatabaseContract.PerformanceTable.PERFORMANCE_CONTENT_ITEM_TYPE;
             case TEAMS:
-                return DatabaseContract.TeamTable.TEAM_CONTENT_TYPE;
+                return DatabaseContract.TeamTable.TEAMS_CONTENT_TYPE;
             case TEAM:
                 return DatabaseContract.TeamTable.TEAM_CONTENT_ITEM_TYPE;
             case PLAYERS:
@@ -274,7 +274,7 @@ public class GeneralContentProvider extends ContentProvider {
     public Uri insert(Uri uri, ContentValues values) {
         long id = 0L;
         switch (uriMatcher.match(uri)) {
-            case PERFORMANCE_BY_JERSEY_NUMBER:
+            case PERFORMANCES:
                 id = database.insertWithOnConflict(
                         DatabaseContract.PerformanceTable.TABLE_NAME,
                         null,
@@ -325,7 +325,7 @@ public class GeneralContentProvider extends ContentProvider {
         return 0;
     }
 
-    private void deleteLastRow(String TableName, int JerseyNumber) {
+/*    private void deleteLastRow(String TableName, int JerseyNumber) {
         String deletionQuery = "";
         if (JerseyNumber >= 0) {
             deletionQuery = "SELECT * FROM " + DatabaseContract.PerformanceTable.TABLE_NAME +
@@ -333,7 +333,7 @@ public class GeneralContentProvider extends ContentProvider {
                     " LIMIT 1";
         }
 
-    }
+    }*/
 
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {

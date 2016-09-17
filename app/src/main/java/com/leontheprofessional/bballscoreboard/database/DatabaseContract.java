@@ -531,7 +531,9 @@ public final class DatabaseContract {
 
     // todo: This is the very simple table, very inefficient. Improvement will be made later on
     // todo: I will try to use tables with Normalization1
-    /*public static abstract class PerformanceTable implements BaseColumns {
+    // todo: PerformanceTable is still needed for one game temporary stats
+    // todo: keep 5~10 PerformanceTables and delete others
+    public static abstract class PerformanceTable implements BaseColumns {
         public static final int SHOT_MADE = 1;
         public static final int SHOT_MISS = 2;
         public static final int STEAL_MADE = 1;
@@ -555,6 +557,7 @@ public final class DatabaseContract {
         public static final String URL_PERFORMANCE_BLOCK = "block/";
 
         public static final String TABLE_NAME = "performance_table";
+        public static final String COLUMN_GENERAL_ID = "_id";
         public static final String COLUMN_JERSEY_NUMBER = "jersey_number";
         public static final String COLUMN_PT_3 = "pt_3";
         public static final String COLUMN_PT_2 = "pt_2";
@@ -562,7 +565,7 @@ public final class DatabaseContract {
         public static final String COLUMN_STEAL = "steal";
         public static final String COLUMN_OFF_REB = "offensive_reb";
         public static final String COLUMN_DEF_REB = "defensive_reb";
-        public static final String COLUMN_FAUL = "faul";
+        public static final String COLUMN_PERSONAL_FAUL = "faul";
         public static final String COLUMN_TECHNICAL_FAUL = "technical_faul";
         public static final String COLUMN_FLAGRANT_FAUL = "flagrant_faul";
         public static final String COLUMN_TURNOVER = "turnover";
@@ -571,7 +574,7 @@ public final class DatabaseContract {
 
         public static final String URL_PERFORMANCES = "content://" + AUTHORITY + "/performances";
         public static final Uri CONTENT_URI_PERFORMANCES = Uri.parse(URL_PERFORMANCES);
-        public static final String[] projectionForAllPerformanceTable = {
+        public static final String[] projectionForAll = {
                 COLUMN_JERSEY_NUMBER,
                 COLUMN_PT_3,
                 COLUMN_PT_2,
@@ -579,12 +582,12 @@ public final class DatabaseContract {
                 COLUMN_STEAL,
                 COLUMN_OFF_REB,
                 COLUMN_DEF_REB,
-                COLUMN_FAUL,
                 COLUMN_TURNOVER,
                 COLUMN_BLOCK,
-                COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP,
-                COLUMN_TECHNICAL_FAUL,
-                COLUMN_FLAGRANT_FAUL
+                COLUMN_PERSONAL_FAUL,
+                // COLUMN_TECHNICAL_FAUL,
+                // COLUMN_FLAGRANT_FAUL,
+                // COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP
         };
 
         public static final String PERFORMANCE_CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
@@ -592,23 +595,25 @@ public final class DatabaseContract {
         public static final String PERFORMANCE_CONTENT_ITEM_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
                 "vnd." + AUTHORITY + ".performance";
 
-        public static final String PERFORMANCE_TABLE_CREATION = "CREATE TABLE " +
+        public static final String PERFORMANCE_TABLE_CREATION_QUERY = "CREATE TABLE " +
                 TABLE_NAME + " (" +
-                "_id" + TYPE_INTEGER + " PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_JERSEY_NUMBER + " INTEGER" + COMMA_SEPARATOR +
+                COLUMN_GENERAL_ID + TYPE_INTEGER + PRIMARY_KEY + AUTO_INCREMENT + COMMA_SEPARATOR +
+                COLUMN_JERSEY_NUMBER + TYPE_TEXT + COMMA_SEPARATOR +
                 COLUMN_PT_3 + TYPE_INTEGER + COMMA_SEPARATOR +
                 COLUMN_PT_2 + TYPE_INTEGER + COMMA_SEPARATOR +
                 COLUMN_PT_1 + TYPE_INTEGER + COMMA_SEPARATOR +
                 COLUMN_STEAL + TYPE_INTEGER + COMMA_SEPARATOR +
                 COLUMN_OFF_REB + TYPE_INTEGER + COMMA_SEPARATOR +
                 COLUMN_DEF_REB + TYPE_INTEGER + COMMA_SEPARATOR +
-                COLUMN_FAUL + TYPE_INTEGER + COMMA_SEPARATOR +
                 COLUMN_TURNOVER + TYPE_INTEGER + COMMA_SEPARATOR +
                 COLUMN_BLOCK + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_PERSONAL_FAUL + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_TECHNICAL_FAUL + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_FLAGRANT_FAUL + TYPE_INTEGER + COMMA_SEPARATOR +
                 COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + TYPE_DATETIME +
                 ")";
 
-        public static final String PERFORMANCE_TABLE_DELETION = "DROP TABLE IF EXISTS " + TABLE_NAME;
+        public static final String PERFORMANCE_TABLE_DELETION_QUERY = "DROP TABLE IF EXISTS " + TABLE_NAME;
 
     }
 
@@ -624,5 +629,5 @@ public final class DatabaseContract {
         public static final String COLUMN_STARTING_TIME = "starting_time";
         public static final String COLUMN_END_TIME = "end_time";
         public static final String COLUMN_LOCATION = "location";
-    }*/
+    }
 }

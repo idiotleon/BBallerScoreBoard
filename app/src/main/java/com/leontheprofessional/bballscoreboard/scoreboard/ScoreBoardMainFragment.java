@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -212,14 +211,13 @@ public class ScoreBoardMainFragment extends Fragment {
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_PT_2, pt2);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_PT_3, pt3);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_PT_1, pt1);
-        contentValue.put(DatabaseContract.PerformanceTable.COLUMN_FAUL, faul);
+        contentValue.put(DatabaseContract.PerformanceTable.COLUMN_PERSONAL_FAUL, faul);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_STEAL, steal);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_TURNOVER, turnover);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_OFF_REB, offReb);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_DEF_REB, defReb);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_BLOCK, block);
-        String dateTimeStamp = (DateFormat.format("yyyy-MM-dd hh:mm:ss", new java.util.Date()).toString());
-        contentValue.put(DatabaseContract.COLUMN_TIMESTAMP, dateTimeStamp);
+        // contentValue.put(DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP, System.currentTimeMillis());
 
         Uri uri = getContext().getContentResolver().insert(DatabaseContract.PerformanceTable.CONTENT_URI_PERFORMANCES, contentValue);
         Log.v(LOG_TAG, "Inserted URI: " + uri);
@@ -227,14 +225,14 @@ public class ScoreBoardMainFragment extends Fragment {
 
     private void refreshPt2Panel() {
         String UrlPerformancePt2Made = DatabaseContract.PerformanceTable.URL_PERFORMANCE + DatabaseContract.PerformanceTable.URL_PERFORMANCE_PT2_MADE + jerseyNumber;
-        String UrlPerformancePt2Missed = DatabaseContract.PerformanceTable.URL_PERFORMANCE + DatabaseContract.PerformanceTable.URL_PERFORMANCE_PT2_MISSED + jerseyNumber;
         Uri UriPerformancePt2Made = Uri.parse(UrlPerformancePt2Made);
+        String UrlPerformancePt2Missed = DatabaseContract.PerformanceTable.URL_PERFORMANCE + DatabaseContract.PerformanceTable.URL_PERFORMANCE_PT2_MISSED + jerseyNumber;
         Uri UriPerformancePt2Missed = Uri.parse(UrlPerformancePt2Missed);
         int pt2Made = getContext().getContentResolver()
-                .query(UriPerformancePt2Made, DatabaseContract.PerformanceTable.projectionForAllPerformanceTable, null, null, null)
+                .query(UriPerformancePt2Made, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
                 .getCount();
         int pt2Missed = getContext().getContentResolver()
-                .query(UriPerformancePt2Missed, DatabaseContract.PerformanceTable.projectionForAllPerformanceTable, null, null, null)
+                .query(UriPerformancePt2Missed, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
                 .getCount();
         int pt2Attempted = pt2Made + pt2Missed;
         Log.v(LOG_TAG, "pt2Attempted: " + pt2Attempted);
@@ -249,10 +247,10 @@ public class ScoreBoardMainFragment extends Fragment {
         Uri UriPerformancePt3Missed = Uri.parse(UrlPerformancePt3Missed);
 
         int pt3Made = getContext().getContentResolver()
-                .query(UriPerformancePt3Made, DatabaseContract.PerformanceTable.projectionForAllPerformanceTable, null, null, null)
+                .query(UriPerformancePt3Made, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
                 .getCount();
         int pt3Missed = getContext().getContentResolver()
-                .query(UriPerformancePt3Missed, DatabaseContract.PerformanceTable.projectionForAllPerformanceTable, null, null, null)
+                .query(UriPerformancePt3Missed, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
                 .getCount();
         int pt3Attempted = pt3Made + pt3Missed;
         Log.v(LOG_TAG, "pt3Attempted: " + pt3Attempted);
@@ -267,10 +265,10 @@ public class ScoreBoardMainFragment extends Fragment {
         Uri UriPerformancePt1Missed = Uri.parse(UrlPerformancePt1Missed);
 
         int pt1Made = getContext().getContentResolver()
-                .query(UriPerformancePt1Made, DatabaseContract.PerformanceTable.projectionForAllPerformanceTable, null, null, null)
+                .query(UriPerformancePt1Made, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
                 .getCount();
         int pt1Missed = getContext().getContentResolver()
-                .query(UriPerformancePt1Missed, DatabaseContract.PerformanceTable.projectionForAllPerformanceTable, null, null, null)
+                .query(UriPerformancePt1Missed, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
                 .getCount();
         int pt1Attempted = pt1Made + pt1Missed;
         Log.v(LOG_TAG, "pt1Attempted: " + pt1Attempted);
@@ -283,7 +281,7 @@ public class ScoreBoardMainFragment extends Fragment {
         Uri UriPerformanceStealMade = Uri.parse(UrlPerformanceStealMade);
 
         int stealsMade = getContext().getContentResolver()
-                .query(UriPerformanceStealMade, DatabaseContract.PerformanceTable.projectionForAllPerformanceTable, null, null, null)
+                .query(UriPerformanceStealMade, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
                 .getCount();
         Log.v(LOG_TAG, "Steals made: " + stealsMade);
 
@@ -297,11 +295,11 @@ public class ScoreBoardMainFragment extends Fragment {
         Uri UriPerformanceDefRebMade = Uri.parse(UrlPerformanceDefRebMade);
 
         int offRebMade = getContext().getContentResolver()
-                .query(UriPerformanceOffRebMade, DatabaseContract.PerformanceTable.projectionForAllPerformanceTable, null, null, null)
+                .query(UriPerformanceOffRebMade, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
                 .getCount();
         Log.v(LOG_TAG, "OffReb made: " + offRebMade);
         int defRebMade = getContext().getContentResolver()
-                .query(UriPerformanceDefRebMade, DatabaseContract.PerformanceTable.projectionForAllPerformanceTable, null, null, null)
+                .query(UriPerformanceDefRebMade, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
                 .getCount();
         Log.v(LOG_TAG, "defReb made: " + defRebMade);
 
@@ -313,7 +311,7 @@ public class ScoreBoardMainFragment extends Fragment {
         Uri UriPerformanceFaulCommitted = Uri.parse(UrlPerformanceFaulCommitted);
 
         int faulsCommitted = getContext().getContentResolver()
-                .query(UriPerformanceFaulCommitted, DatabaseContract.PerformanceTable.projectionForAllPerformanceTable, null, null, null)
+                .query(UriPerformanceFaulCommitted, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
                 .getCount();
         Log.v(LOG_TAG, "Fauls committed: " + faulsCommitted);
         faulBoard.setText(Integer.toString(faulsCommitted));
@@ -346,7 +344,7 @@ public class ScoreBoardMainFragment extends Fragment {
         Uri UriPerformanceTurnoverMade = Uri.parse(UrlPerformanceTurnoverMade);
 
         int turnoversMade = getContext().getContentResolver()
-                .query(UriPerformanceTurnoverMade, DatabaseContract.PerformanceTable.projectionForAllPerformanceTable, null, null, null)
+                .query(UriPerformanceTurnoverMade, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
                 .getCount();
         Log.v(LOG_TAG, "Turnovers made: " + turnoversMade);
 
@@ -358,7 +356,7 @@ public class ScoreBoardMainFragment extends Fragment {
         Uri UriPerformanceBlockMade = Uri.parse(UrlPerformanceBlockMade);
 
         int blocksMade = getContext().getContentResolver()
-                .query(UriPerformanceBlockMade, DatabaseContract.PerformanceTable.projectionForAllPerformanceTable, null, null, null)
+                .query(UriPerformanceBlockMade, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
                 .getCount();
         Log.v(LOG_TAG, "Blocks made: " + blocksMade);
 

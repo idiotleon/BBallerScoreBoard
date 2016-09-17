@@ -39,6 +39,7 @@
     <string name="player_main_activity">Player</string>
     <string name="name_anonymous">anonymous</string>
 
+    <string name="player_position">Player Position</string>
     <string-array name="player_position">
         <item>Unclear</item>
         <item>Center</item>
