@@ -15,6 +15,9 @@ import com.leontheprofessional.bballscoreboard.database.helper.DatabaseHelper;
 
 public class GeneralContentProvider extends ContentProvider {
 
+    /**
+     * ContentProvider for Performance Table
+     */
     private static final int PERFORMANCES = 0;
     private static final int PERFORMANCE_BY_JERSEY_NUMBER = 1;
     private static final int PT2_MADE_BY_JERSEY_NUMBER = 2;
@@ -30,10 +33,14 @@ public class GeneralContentProvider extends ContentProvider {
     private static final int TURNOVER_BY_JERSEY_NUMBER = 12;
     private static final int BLOCK_BY_JERSEY_NUMBER = 13;
     private static final int ASSIST_BY_JERSEY_NUMBER = 14;
-    // for TEAM_TABLE
+    /**
+     * ContentProvider for TeamTable
+     */
     private static final int TEAMS = 21;
     private static final int TEAM = 22;
-    // for PLAYER_TABLE
+    /**
+     * ContentProvider entrances for Player_Table
+     */
     private static final int PLAYERS = 31;
     private static final int PLAYER_BY_JERSEY_NUMBER = 32;
     private static final int PLAYER_BY_FIRST_NAME = 33;
@@ -93,158 +100,229 @@ public class GeneralContentProvider extends ContentProvider {
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
 
-        queryBuilder.setTables(DatabaseContract.PerformanceTable.TABLE_NAME);
         String groupBy = null;
         String having = null;
+        String tableName;
+        String[] projectionForAll;
 
         switch (uriMatcher.match(uri)) {
             case PERFORMANCES:
                 // do nothing
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PERFORMANCE_BY_JERSEY_NUMBER:
-                //queryBuilder.appendWhere(DatabaseContract.PerformanceTable.COLUMN_PLAYER_JERSEY_NUMBER + "=" + uri.getLastPathSegment());
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ?";
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PT2_MADE_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
                         DatabaseContract.PerformanceTable.COLUMN_PT_2 + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.SHOT_MADE);
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PT2_MISSED_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
                         DatabaseContract.PerformanceTable.COLUMN_PT_2 + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.SHOT_MISS);
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PT3_MADE_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
                         DatabaseContract.PerformanceTable.COLUMN_PT_3 + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.SHOT_MADE);
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PT3_MISSED_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
                         DatabaseContract.PerformanceTable.COLUMN_PT_3 + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.SHOT_MISS);
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PT1_MADE_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
                         DatabaseContract.PerformanceTable.COLUMN_PT_1 + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.SHOT_MADE);
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PT1_MISSED_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
                         DatabaseContract.PerformanceTable.COLUMN_PT_1 + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.SHOT_MISS);
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case STEAL_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
                         DatabaseContract.PerformanceTable.COLUMN_STEAL + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.STEAL_MADE);
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case OFF_REB_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
                         DatabaseContract.PerformanceTable.COLUMN_OFF_REB + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.REB_GOT);
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case DEF_REB_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
                         DatabaseContract.PerformanceTable.COLUMN_DEF_REB + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.REB_GOT);
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case FAUL_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
                         DatabaseContract.PerformanceTable.COLUMN_PERSONAL_FAUL + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.FAUL_COMMITTED);
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case TURNOVER_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
                         DatabaseContract.PerformanceTable.COLUMN_TURNOVER + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.TURNOVER_MADE);
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case BLOCK_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
                         DatabaseContract.PerformanceTable.COLUMN_BLOCK + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.BLOCK_MADE);
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             case ASSIST_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PerformanceTable.projectionForAll;
                 selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
                         DatabaseContract.PerformanceTable.COLUMN_ASSIST + " = ?";
                 selectionArgs = new String[2];
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.ASSIST_MADE);
+                sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
                 break;
             // for team table
             case TEAMS:
                 // todo: fetch all teams
+                tableName = DatabaseContract.TeamTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.TeamTable.projectionForAll;
+                sortOrder = DatabaseContract.TeamTable.COLUMN_TEAM_PROFILE_CREATED_TIMESTAMP + " DESC";
                 break;
             case TEAM:
+                tableName = DatabaseContract.TeamTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.TeamTable.projectionForAll;
                 selection = DatabaseContract.TeamTable.COLUMN_TEAM_NAME + " = ?";
                 selectionArgs[0] = (uri.getLastPathSegment().toString());
+                sortOrder = DatabaseContract.TeamTable.COLUMN_TEAM_PROFILE_CREATED_TIMESTAMP + " DESC";
                 break;
             // for players table
             case PLAYERS:
                 // todo: fetch all players
+                tableName = DatabaseContract.PlayerTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PlayerTable.projectionForAll;
+                selection = null;
+                selectionArgs[0] = null;
+                sortOrder = DatabaseContract.PlayerTable.COLUMN_PLAYER_PROFILE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PLAYER_BY_JERSEY_NUMBER:
+                tableName = DatabaseContract.PlayerTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PlayerTable.projectionForAll;
                 selection = DatabaseContract.PlayerTable.COLUMN_PLAYER_JERSEY_NUMBER + " = ?";
                 // todo: what will happen if number "=" with string, or number`(as string) "=" with string
                 selectionArgs[0] = (uri.getLastPathSegment().toString());
+                sortOrder = DatabaseContract.PlayerTable.COLUMN_PLAYER_PROFILE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PLAYER_BY_FIRST_NAME:
+                tableName = DatabaseContract.PlayerTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PlayerTable.projectionForAll;
                 selection = DatabaseContract.PlayerTable.COLUMN_PLAYER_FIRST_NAME + " = ?";
                 selectionArgs[0] = (uri.getLastPathSegment().toString());
+                sortOrder = DatabaseContract.PlayerTable.COLUMN_PLAYER_PROFILE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PLAYER_BY_LAST_NAME:
+                tableName = DatabaseContract.PlayerTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PlayerTable.projectionForAll;
                 selection = DatabaseContract.PlayerTable.COLUMN_PLAYER_LAST_NAME + " = ?";
                 selectionArgs[0] = (uri.getLastPathSegment().toString());
+                sortOrder = DatabaseContract.PlayerTable.COLUMN_PLAYER_PROFILE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PLAYER_BY_HEIGHT:
+                tableName = DatabaseContract.PlayerTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PlayerTable.projectionForAll;
                 selection = DatabaseContract.PlayerTable.COLUMN_PLAYER_HEIGHT + " > ?";
                 selectionArgs[0] = (uri.getLastPathSegment().toString());
+                sortOrder = DatabaseContract.PlayerTable.COLUMN_PLAYER_PROFILE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PLAYER_BY_WEIGHT:
+                tableName = DatabaseContract.PlayerTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PlayerTable.projectionForAll;
                 // todo: select a range of weight
                 selection = DatabaseContract.PlayerTable.COLUMN_PLAYER_WEIGHT + " > ?";
                 selectionArgs[0] = (uri.getLastPathSegment().toString());
+                sortOrder = DatabaseContract.PlayerTable.COLUMN_PLAYER_PROFILE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PLAYER_BY_POSITION:
+                tableName = DatabaseContract.PlayerTable.TABLE_NAME;
+                projectionForAll = DatabaseContract.PlayerTable.projectionForAll;
                 selection = DatabaseContract.PlayerTable.COLUMN_PLAYER_POSITION + " = ?";
                 selectionArgs[0] = (uri.getLastPathSegment().toString());
+                sortOrder = DatabaseContract.PlayerTable.COLUMN_PLAYER_PROFILE_CREATED_TIMESTAMP + " DESC";
                 break;
             default:
                 throw new IllegalArgumentException("Unkown URI " + uri);
         }
 
-/*        if (sortOrder == null || sortOrder == "") {
-            sortOrder = DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC";
-        }*/
-        sortOrder = null;
+        queryBuilder.setTables(tableName);
         Cursor cursor = queryBuilder.query(database,
-                DatabaseContract.PerformanceTable.projectionForAll,
+                projectionForAll,
                 selection,
                 selectionArgs,
                 groupBy,

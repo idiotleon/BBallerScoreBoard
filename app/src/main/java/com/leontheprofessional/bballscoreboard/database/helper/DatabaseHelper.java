@@ -49,7 +49,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.v(LOG_TAG, "onUpgrade() executed.");
-
         Log.v(LOG_TAG, DatabaseContract.PerformanceTable.PERFORMANCE_TABLE_DELETION_QUERY);
         Log.v(LOG_TAG, DatabaseContract.PlayerTable.PLAYER_TABLE_DELETION_QUERY);
         Log.v(LOG_TAG, DatabaseContract.TeamTable.TEAM_TABLE_DELETION_QUERY);
