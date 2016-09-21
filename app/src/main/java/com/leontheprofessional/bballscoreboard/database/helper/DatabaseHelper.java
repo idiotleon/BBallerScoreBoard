@@ -13,10 +13,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(Context context) {
         super(context, DatabaseContract.DATABASE_NAME, null, DatabaseContract.DATABASE_VERSION);
+        Log.v(LOG_TAG, "DatabaseHelper() executed.");
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        Log.v(LOG_TAG, "onCreate() executed.");
         // todo: one can see how IMPORTANT unit testing for database is!!!
         Log.v(LOG_TAG, DatabaseContract.PerformanceTable.PERFORMANCE_TABLE_CREATION_QUERY);
         Log.v(LOG_TAG, DatabaseContract.PlayerTable.PLAYER_TABLE_CREATION);
@@ -46,6 +48,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        Log.v(LOG_TAG, "onUpgrade() executed.");
+
         Log.v(LOG_TAG, DatabaseContract.PerformanceTable.PERFORMANCE_TABLE_DELETION_QUERY);
         Log.v(LOG_TAG, DatabaseContract.PlayerTable.PLAYER_TABLE_DELETION_QUERY);
         Log.v(LOG_TAG, DatabaseContract.TeamTable.TEAM_TABLE_DELETION_QUERY);

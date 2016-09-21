@@ -17,8 +17,8 @@ public final class DatabaseContract {
     public static final String TYPE_DATETIME = " INTEGER";
     public static final String DEFAULT_VALUE_ZERO = " DEFAULT 0";
 
-    public static final String PRIMARY_KEY = " PRIMARY KEY ";
-    public static final String AUTO_INCREMENT = " AUTOINCREMENT ";
+    public static final String PRIMARY_KEY = " PRIMARY KEY";
+    public static final String AUTO_INCREMENT = " AUTOINCREMENT";
 
     // All data of all players in a game
     public static final String AUTHORITY = "com.leontheprofessional.bballscoreboard";
@@ -165,9 +165,10 @@ public final class DatabaseContract {
 
         public static final String TEAM_TABLE_CREATION_QUERY = "CREATE TABLE " +
                 TABLE_NAME + " (" +
-                COLUMN_TEAM_ID + TYPE_INTEGER + " PRIMARY KEY AUTOINCREMENT" + COMMA_SEPARATOR +
+                COLUMN_TEAM_ID + TYPE_INTEGER + PRIMARY_KEY + AUTO_INCREMENT + COMMA_SEPARATOR +
                 COLUMN_TEAM_UUID + TYPE_BLOB + COMMA_SEPARATOR +
                 COLUMN_TEAM_NAME + TYPE_TEXT + COMMA_SEPARATOR +
+                COLUMN_PLAYER_JERSEY_NUMBER + TYPE_INTEGER + COMMA_SEPARATOR +
                 COLUMN_TEAM_PROFILE_CREATED_TIMESTAMP + TYPE_DATETIME + COMMA_SEPARATOR +
                 COLUMN_PLAYER_UUID + TYPE_BLOB + COMMA_SEPARATOR +
                 " UNIQUE(" + COLUMN_PLAYER_JERSEY_NUMBER + COMMA_SEPARATOR + COLUMN_PLAYER_UUID + ")" +
@@ -541,6 +542,7 @@ public final class DatabaseContract {
         public static final int FAUL_COMMITTED = 1;
         public static final int TURNOVER_MADE = 1;
         public static final int BLOCK_MADE = 1;
+        public static final int ASSIST_MADE = 1;
 
         public static final String URL_PERFORMANCE = "content://" + AUTHORITY + "/performance/";
         public static final String URL_PERFORMANCE_PT2_MADE = "pt2made/";
@@ -552,6 +554,8 @@ public final class DatabaseContract {
         public static final String URL_PERFORMANCE_STEAL = "steal/";
         public static final String URL_PERFORMANCE_OFF_REB = "offreb/";
         public static final String URL_PERFORMANCE_DEF_REB = "defreb/";
+        // todo: setup assist refresh mechanism
+        public static final String URL_PERFORMANCE_ASSIST = "assist/";
         public static final String URL_PERFORMANCE_FAUL = "faul/";
         public static final String URL_PERFORMANCE_TURNOVER = "turnover/";
         public static final String URL_PERFORMANCE_BLOCK = "block/";
@@ -570,6 +574,7 @@ public final class DatabaseContract {
         public static final String COLUMN_FLAGRANT_FAUL = "flagrant_faul";
         public static final String COLUMN_TURNOVER = "turnover";
         public static final String COLUMN_BLOCK = "block";
+        public static final String COLUMN_ASSIST = "assist";
         public static final String COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP = "performance_table_created_timestamp";
 
         public static final String URL_PERFORMANCES = "content://" + AUTHORITY + "/performances";
@@ -584,10 +589,11 @@ public final class DatabaseContract {
                 COLUMN_DEF_REB,
                 COLUMN_TURNOVER,
                 COLUMN_BLOCK,
+                COLUMN_ASSIST,
                 COLUMN_PERSONAL_FAUL,
-                // COLUMN_TECHNICAL_FAUL,
-                // COLUMN_FLAGRANT_FAUL,
-                // COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP
+                COLUMN_TECHNICAL_FAUL,
+                COLUMN_FLAGRANT_FAUL,
+                COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP
         };
 
         public static final String PERFORMANCE_CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
@@ -599,17 +605,18 @@ public final class DatabaseContract {
                 TABLE_NAME + " (" +
                 COLUMN_GENERAL_ID + TYPE_INTEGER + PRIMARY_KEY + AUTO_INCREMENT + COMMA_SEPARATOR +
                 COLUMN_JERSEY_NUMBER + TYPE_TEXT + COMMA_SEPARATOR +
-                COLUMN_PT_3 + TYPE_INTEGER + COMMA_SEPARATOR +
-                COLUMN_PT_2 + TYPE_INTEGER + COMMA_SEPARATOR +
-                COLUMN_PT_1 + TYPE_INTEGER + COMMA_SEPARATOR +
-                COLUMN_STEAL + TYPE_INTEGER + COMMA_SEPARATOR +
-                COLUMN_OFF_REB + TYPE_INTEGER + COMMA_SEPARATOR +
-                COLUMN_DEF_REB + TYPE_INTEGER + COMMA_SEPARATOR +
-                COLUMN_TURNOVER + TYPE_INTEGER + COMMA_SEPARATOR +
-                COLUMN_BLOCK + TYPE_INTEGER + COMMA_SEPARATOR +
-                COLUMN_PERSONAL_FAUL + TYPE_INTEGER + COMMA_SEPARATOR +
-                COLUMN_TECHNICAL_FAUL + TYPE_INTEGER + COMMA_SEPARATOR +
-                COLUMN_FLAGRANT_FAUL + TYPE_INTEGER + COMMA_SEPARATOR +
+                COLUMN_PT_3 + TYPE_INTEGER + DEFAULT_VALUE_ZERO + COMMA_SEPARATOR +
+                COLUMN_PT_2 + TYPE_INTEGER + DEFAULT_VALUE_ZERO + COMMA_SEPARATOR +
+                COLUMN_PT_1 + TYPE_INTEGER + DEFAULT_VALUE_ZERO + COMMA_SEPARATOR +
+                COLUMN_STEAL + TYPE_INTEGER + DEFAULT_VALUE_ZERO + COMMA_SEPARATOR +
+                COLUMN_OFF_REB + TYPE_INTEGER + DEFAULT_VALUE_ZERO + COMMA_SEPARATOR +
+                COLUMN_DEF_REB + TYPE_INTEGER + DEFAULT_VALUE_ZERO + COMMA_SEPARATOR +
+                COLUMN_TURNOVER + TYPE_INTEGER + DEFAULT_VALUE_ZERO + COMMA_SEPARATOR +
+                COLUMN_BLOCK + TYPE_INTEGER + DEFAULT_VALUE_ZERO + COMMA_SEPARATOR +
+                COLUMN_ASSIST + TYPE_INTEGER + DEFAULT_VALUE_ZERO + COMMA_SEPARATOR +
+                COLUMN_PERSONAL_FAUL + TYPE_INTEGER + DEFAULT_VALUE_ZERO + COMMA_SEPARATOR +
+                COLUMN_TECHNICAL_FAUL + TYPE_INTEGER + DEFAULT_VALUE_ZERO + COMMA_SEPARATOR +
+                COLUMN_FLAGRANT_FAUL + TYPE_INTEGER + DEFAULT_VALUE_ZERO + COMMA_SEPARATOR +
                 COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + TYPE_DATETIME +
                 ")";
 

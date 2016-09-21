@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -86,6 +87,8 @@ public class AddOnePlayerDialogFragment extends DialogFragment {
                 playerContentValue.put(DatabaseContract.PlayerTable.COLUMN_PLAYER_PROFILE_CREATED_TIMESTAMP, System.currentTimeMillis());
 
                 Uri uri = getContext().getContentResolver().insert(DatabaseContract.PlayerTable.CONTENT_URI_PLAYERS, playerContentValue);
+                Log.v(LOG_TAG, "Players inserted URIs: " + uri.toString());
+                getDialog().dismiss();
             }
         });
 

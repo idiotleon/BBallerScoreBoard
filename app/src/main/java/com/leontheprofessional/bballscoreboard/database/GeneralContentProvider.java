@@ -29,20 +29,22 @@ public class GeneralContentProvider extends ContentProvider {
     private static final int FAUL_BY_JERSEY_NUMBER = 11;
     private static final int TURNOVER_BY_JERSEY_NUMBER = 12;
     private static final int BLOCK_BY_JERSEY_NUMBER = 13;
+    private static final int ASSIST_BY_JERSEY_NUMBER = 14;
     // for TEAM_TABLE
-    private static final int TEAMS = 14;
-    private static final int TEAM = 15;
+    private static final int TEAMS = 21;
+    private static final int TEAM = 22;
     // for PLAYER_TABLE
-    private static final int PLAYERS = 16;
-    private static final int PLAYER_BY_JERSEY_NUMBER = 17;
-    private static final int PLAYER_BY_FIRST_NAME = 18;
-    private static final int PLAYER_BY_LAST_NAME = 19;
-    private static final int PLAYER_BY_HEIGHT = 20;
-    private static final int PLAYER_BY_WEIGHT = 21;
-    private static final int PLAYER_BY_POSITION = 22;
+    private static final int PLAYERS = 31;
+    private static final int PLAYER_BY_JERSEY_NUMBER = 32;
+    private static final int PLAYER_BY_FIRST_NAME = 33;
+    private static final int PLAYER_BY_LAST_NAME = 34;
+    private static final int PLAYER_BY_HEIGHT = 35;
+    private static final int PLAYER_BY_WEIGHT = 36;
+    private static final int PLAYER_BY_POSITION = 37;
 
 
     private SQLiteDatabase database;
+    private DatabaseHelper dbHelper;
 
     private static final UriMatcher uriMatcher;
 
@@ -62,6 +64,7 @@ public class GeneralContentProvider extends ContentProvider {
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "performance/faul/#", FAUL_BY_JERSEY_NUMBER);
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "performance/turnover/#", TURNOVER_BY_JERSEY_NUMBER);
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "performance/block/#", BLOCK_BY_JERSEY_NUMBER);
+        uriMatcher.addURI(DatabaseContract.AUTHORITY, "performance/assist/#", ASSIST_BY_JERSEY_NUMBER);
         // for TEAM_TABLE
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "teams", TEAMS);
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "team/#", TEAM);
@@ -77,7 +80,7 @@ public class GeneralContentProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        DatabaseHelper dbHelper = new DatabaseHelper(getContext());
+        dbHelper = new DatabaseHelper(getContext());
         database = dbHelper.getWritableDatabase();
         return false;
     }
@@ -187,6 +190,13 @@ public class GeneralContentProvider extends ContentProvider {
                 selectionArgs[0] = (uri.getLastPathSegment()).toString();
                 selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.BLOCK_MADE);
                 break;
+            case ASSIST_BY_JERSEY_NUMBER:
+                selection = DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER + " = ? AND " +
+                        DatabaseContract.PerformanceTable.COLUMN_ASSIST + " = ?";
+                selectionArgs = new String[2];
+                selectionArgs[0] = (uri.getLastPathSegment()).toString();
+                selectionArgs[1] = Integer.toString(DatabaseContract.PerformanceTable.ASSIST_MADE);
+                break;
             // for team table
             case TEAMS:
                 // todo: fetch all teams
@@ -201,7 +211,7 @@ public class GeneralContentProvider extends ContentProvider {
                 break;
             case PLAYER_BY_JERSEY_NUMBER:
                 selection = DatabaseContract.PlayerTable.COLUMN_PLAYER_JERSEY_NUMBER + " = ?";
-                // todo: what will happen if number "=" with string, or number(as string) "=" with string
+                // todo: what will happen if number "=" with string, or number`(as string) "=" with string
                 selectionArgs[0] = (uri.getLastPathSegment().toString());
                 break;
             case PLAYER_BY_FIRST_NAME:
@@ -277,6 +287,20 @@ public class GeneralContentProvider extends ContentProvider {
             case PERFORMANCES:
                 id = database.insertWithOnConflict(
                         DatabaseContract.PerformanceTable.TABLE_NAME,
+                        null,
+                        values,
+                        SQLiteDatabase.CONFLICT_REPLACE);
+                return getUriForId(id, uri);
+            case PLAYERS:
+                id = database.insertWithOnConflict(
+                        DatabaseContract.PlayerTable.TABLE_NAME,
+                        null,
+                        values,
+                        SQLiteDatabase.CONFLICT_REPLACE);
+                return getUriForId(id, uri);
+            case TEAMS:
+                id = database.insertWithOnConflict(
+                        DatabaseContract.TeamTable.TABLE_NAME,
                         null,
                         values,
                         SQLiteDatabase.CONFLICT_REPLACE);
