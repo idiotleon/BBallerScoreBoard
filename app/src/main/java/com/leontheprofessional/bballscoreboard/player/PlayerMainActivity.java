@@ -2,7 +2,7 @@ package com.leontheprofessional.bballscoreboard.player;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -20,6 +20,9 @@ public class PlayerMainActivity extends AppCompatActivity {
         setContentView(R.layout.player_main_activity);
 
         // todo: use PlayersListFragment to list all players registered
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fl_player_main_activity, PlayersListFragment.newInstance(null));
+        fragmentTransaction.commit();
 
         fab = (FloatingActionButton) findViewById(R.id.fab_player_main_activity);
         fab.setOnClickListener(new View.OnClickListener() {

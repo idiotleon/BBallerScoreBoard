@@ -5,5 +5,7 @@ package com.leontheprofessional.bballscoreboard.helpers;
  */
 public class CommonConstants {
 
-    public static final String JERSEY_NUMBER_IDENTIFIER = "JERSEY_NUMBER_IDENTIFIER";
+    public static final String JERSEY_NUMBER_IDENTIFIER = "jersey_number_identifier";
+
+    public static final String PLAYER_UUID_IDENTIFIER = "player_uuid_identifier";
 }

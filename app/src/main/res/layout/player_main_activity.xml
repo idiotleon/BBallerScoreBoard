@@ -45,10 +45,10 @@
                 android:layout_weight="1" />
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/listview_player_main_activity"
+        <FrameLayout
+            android:id="@+id/fl_player_main_activity"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></ListView>
+            android:layout_height="wrap_content"></FrameLayout>
 
     </LinearLayout>
 

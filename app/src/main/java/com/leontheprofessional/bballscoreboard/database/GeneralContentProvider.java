@@ -269,7 +269,7 @@ public class GeneralContentProvider extends ContentProvider {
                 tableName = DatabaseContract.PlayerTable.TABLE_NAME;
                 projectionForAll = DatabaseContract.PlayerTable.projectionForAll;
                 selection = null;
-                selectionArgs[0] = null;
+                selectionArgs = null;
                 sortOrder = DatabaseContract.PlayerTable.COLUMN_PLAYER_PROFILE_CREATED_TIMESTAMP + " DESC";
                 break;
             case PLAYER_BY_JERSEY_NUMBER:

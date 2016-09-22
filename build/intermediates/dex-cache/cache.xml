@@ -3,11 +3,20 @@
 
     <item
         is-multidex="true"
+        jar="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.3.0_90780153bc20632af3cdb3aef0bd8d8abb1ee0cc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="f0ca771c0dd91d502c33bccfdf7dfccd0714a725">
+        sha1="73c03d80f6b3d2ef084eb45e5708be489c26193f">
         <dex dex="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_e3b9c73ae041f7c76a82e459fa584e6d2b30070e\classes.dex" />
     </item>
     <item
@@ -39,12 +48,39 @@
     </item>
     <item
         is-multidex="true"
+        jar="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_dfc77afd8e9552315777985ed1c2ea3c0b947dee\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
         sha1="debf30ce0a7560396b6235edef77e447006454c2">
         <dex dex="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.3.0_0f8ddba46ba0e2e15490941331e73161c7905a80\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7ef377d1811267dac6a9ad39a6404f7e543414d7">
+        <dex dex="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_8d9b526f68a6a4e677db3e9f9552c7735826d7cb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_6f2334386a17cf1f6c371cae91bce5db68d9254a\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -63,42 +99,6 @@
         revision="23.0.3"
         sha1="bbcf6448f6d40abe506e2c83b70a3e8bfd2b4539">
         <dex dex="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\annotations-12.0_1ff102a86f261d76211a54e39eded7252fd8704d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
-        <dex dex="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.3.0_90780153bc20632af3cdb3aef0bd8d8abb1ee0cc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_dfc77afd8e9552315777985ed1c2ea3c0b947dee\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="e1aa774aa554e791bfedddff5da02cf9b5b50ac1">
-        <dex dex="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_8d9b526f68a6a4e677db3e9f9552c7735826d7cb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_6f2334386a17cf1f6c371cae91bce5db68d9254a\classes.dex" />
     </item>
 
 </items>
