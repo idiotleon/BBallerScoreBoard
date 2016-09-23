@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -260,5 +261,17 @@
                 android:layout_weight="1"
                 android:text="@string/zero" />
         </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_revoke_last_performance_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:elevation="6dp"
+            android:src="@android:drawable/ic_menu_revert"
+            app:borderWidth="0dp" />
+
     </LinearLayout>
+
 </ScrollView>

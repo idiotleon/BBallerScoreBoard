@@ -1,15 +1,13 @@
 package com.leontheprofessional.bballscoreboard.team;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ListView;
 
 import com.leontheprofessional.bballscoreboard.R;
-import com.leontheprofessional.bballscoreboard.player.PlayerMainActivity;
+import com.leontheprofessional.bballscoreboard.helpers.CommonConstants;
 
 /**
  * todo: the first page of TeamActivity should have a list of all teams,
@@ -19,24 +17,23 @@ import com.leontheprofessional.bballscoreboard.player.PlayerMainActivity;
  */
 public class TeamMainActivity extends AppCompatActivity {
 
-    private ListView teamMemberListView;
     private FloatingActionButton fab;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity_team);
+        setContentView(R.layout.team_main_activity);
 
-        // todo: listing all teams should be done with a standalone fragment: TeamsListFragment
-        teamMemberListView = (ListView) findViewById(R.id.listview_member_team);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fl_list_all_teams, TeamsListFragment.newInstance(null));
+        fragmentTransaction.commit();
 
         fab = (FloatingActionButton) findViewById(R.id.fab_team_main_activity);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // todo: when fab here pressed, the app should add team firstly, and then select players as team members
-                Intent playerIntent = new Intent(TeamMainActivity.this, PlayerMainActivity.class);
-                startActivity(playerIntent);
+                AddOneTeamFragment addOneTeamFragment = new AddOneTeamFragment();
+                addOneTeamFragment.show(getSupportFragmentManager(), CommonConstants.ADD_ONE_TEAM_DIALOG_FRAGMENT);
             }
         });
     }

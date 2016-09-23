@@ -46,7 +46,7 @@
         </LinearLayout>
 
         <FrameLayout
-            android:id="@+id/fl_player_main_activity"
+            android:id="@+id/fl_list_all_players"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></FrameLayout>
 

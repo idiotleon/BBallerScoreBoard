@@ -91,7 +91,7 @@ public class AddOnePlayerDialogFragment extends DialogFragment {
                 Log.v(LOG_TAG, "Players inserted URIs: " + uri.toString());
 
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fl_player_main_activity, PlayersListFragment.newInstance(null));
+                fragmentTransaction.replace(R.id.fl_list_all_players, PlayersListFragment.newInstance(null));
                 fragmentTransaction.commit();
 
                 getDialog().dismiss();

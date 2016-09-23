@@ -1,11 +1,9 @@
 package com.leontheprofessional.bballscoreboard.player;
 
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
@@ -26,16 +24,9 @@ import com.leontheprofessional.bballscoreboard.helpers.CommonConstants;
  */
 public class PlayersListFragment extends ListFragment implements LoaderManager.LoaderCallbacks<Cursor> {
     private static final String LOG_TAG = PlayersListFragment.class.getSimpleName();
-
     private static final int PLAYER_LIST_FRAGMENT_URL_LOADER = 0;
 
     private ListAllPlayersLVAdapter listAllPlayersLVAdapter;
-
-/*    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_item_list_all_players, null);
-        return view;
-    }*/
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,7 +38,7 @@ public class PlayersListFragment extends ListFragment implements LoaderManager.L
     @Override
     public void onStart() {
         super.onStart();
-        View emptyView = LayoutInflater.from(getContext()).inflate(R.layout.fragment_list_all_players_empty_view, null);
+        View emptyView = LayoutInflater.from(getContext()).inflate(R.layout.empty_view_list_all_players, null);
         getListView().setEmptyView(emptyView);
     }
 
@@ -55,7 +46,6 @@ public class PlayersListFragment extends ListFragment implements LoaderManager.L
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Log.v(LOG_TAG, "Item on position: " + position + " has been clicked");
-
         Cursor playerSelected = (Cursor) listAllPlayersLVAdapter.getItem(position);
         String playerUUID = playerSelected.getString(playerSelected.getColumnIndexOrThrow(DatabaseContract.PlayerTable.COLUMN_PLAYER_UUID));
         Log.v(LOG_TAG, "playerUUID from PlayerListFragment: " + playerUUID);

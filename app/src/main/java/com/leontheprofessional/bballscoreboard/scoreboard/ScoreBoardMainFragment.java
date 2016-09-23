@@ -3,6 +3,7 @@ package com.leontheprofessional.bballscoreboard.scoreboard;
 import android.annotation.TargetApi;
 import android.content.ContentValues;
 import android.net.Uri;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
@@ -49,6 +50,8 @@ public class ScoreBoardMainFragment extends Fragment {
     private TextView turnoverBoard;
     private TextView faulBoard;
 
+    private FloatingActionButton fab;
+
     private int jerseyNumber;
 
     @Nullable
@@ -81,10 +84,12 @@ public class ScoreBoardMainFragment extends Fragment {
         stealBoard = (TextView) view.findViewById(R.id.steal_board);
         blockBoard = (TextView) view.findViewById(R.id.block_board);
 
+        fab = (FloatingActionButton) view.findViewById(R.id.fab_revoke_last_performance_record);
+
         btnPtr2Bucket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValues(jerseyNumber, 0, DatabaseContract.PerformanceTable.SHOT_MADE, 0, 0, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, DatabaseContract.PerformanceTable.SHOT_MADE, 0, 0, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "2Pt shot made", Toast.LENGTH_SHORT).show();
                 refreshPt2Panel();
             }
@@ -93,7 +98,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnPtr2Miss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValues(jerseyNumber, 0, DatabaseContract.PerformanceTable.SHOT_MISS, 0, 0, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, DatabaseContract.PerformanceTable.SHOT_MISS, 0, 0, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "2Pt shot missed", Toast.LENGTH_SHORT).show();
                 refreshPt2Panel();
             }
@@ -102,7 +107,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnPtr3Bucket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValues(jerseyNumber, DatabaseContract.PerformanceTable.SHOT_MADE, 0, 0, 0, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, DatabaseContract.PerformanceTable.SHOT_MADE, 0, 0, 0, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "3Pt shot made", Toast.LENGTH_SHORT).show();
                 refreshPt3Panel();
             }
@@ -111,7 +116,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnPtr3Miss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValues(jerseyNumber, DatabaseContract.PerformanceTable.SHOT_MISS, 0, 0, 0, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, DatabaseContract.PerformanceTable.SHOT_MISS, 0, 0, 0, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "3Pt shot missed", Toast.LENGTH_SHORT).show();
                 refreshPt3Panel();
             }
@@ -120,7 +125,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnPtr1Bucket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValues(jerseyNumber, 0, 0, DatabaseContract.PerformanceTable.SHOT_MADE, 0, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, DatabaseContract.PerformanceTable.SHOT_MADE, 0, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "FreeThrow made", Toast.LENGTH_SHORT).show();
                 refreshPt1Panel();
             }
@@ -129,7 +134,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnPtr1Miss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValues(jerseyNumber, 0, 0, DatabaseContract.PerformanceTable.SHOT_MISS, 0, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, DatabaseContract.PerformanceTable.SHOT_MISS, 0, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "FreeThrow miss", Toast.LENGTH_SHORT).show();
                 refreshPt1Panel();
             }
@@ -138,7 +143,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnFaul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValues(jerseyNumber, 0, 0, 0, DatabaseContract.PerformanceTable.FAUL_COMMITTED, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, DatabaseContract.PerformanceTable.FAUL_COMMITTED, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "Faul committed", Toast.LENGTH_SHORT).show();
                 refreshFaulPanel();
             }
@@ -147,7 +152,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnSteal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValues(jerseyNumber, 0, 0, 0, 0, DatabaseContract.PerformanceTable.STEAL_MADE, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, DatabaseContract.PerformanceTable.STEAL_MADE, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "Nice steal", Toast.LENGTH_SHORT).show();
                 refreshStealPanel();
             }
@@ -157,7 +162,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnTurnover.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValues(jerseyNumber, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.TURNOVER_MADE, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.TURNOVER_MADE, 0, 0, 0);
                 Toast.makeText(getContext(), "Bad Turnover", Toast.LENGTH_SHORT).show();
                 refreshTurnoverPanel();
             }
@@ -166,7 +171,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnOffReb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValues(jerseyNumber, 0, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.REB_GOT, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.REB_GOT, 0, 0);
                 Toast.makeText(getContext(), "Nice Offensive Rebound", Toast.LENGTH_SHORT).show();
                 refreshRebPanel();
             }
@@ -175,7 +180,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnDefReb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValues(jerseyNumber, 0, 0, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.REB_GOT, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.REB_GOT, 0);
                 Toast.makeText(getContext(), "Nice Defensive Rebound", Toast.LENGTH_SHORT).show();
                 refreshRebPanel();
             }
@@ -184,9 +189,16 @@ public class ScoreBoardMainFragment extends Fragment {
         btnBlock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValues(jerseyNumber, 0, 0, 0, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.BLOCK_MADE);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.BLOCK_MADE);
                 Toast.makeText(getContext(), "Nice Block", Toast.LENGTH_SHORT).show();
                 refreshBlockPanel();
+            }
+        });
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                revokeLatestPerformanceRecord();
             }
         });
 
@@ -205,7 +217,7 @@ public class ScoreBoardMainFragment extends Fragment {
         refreshBlockPanel();
     }
 
-    private void insertValues(int jerseyNumber, int pt3, int pt2, int pt1, int faul, int steal, int turnover, int offReb, int defReb, int block) {
+    private void insertValuesIntoPerformanceTable(int jerseyNumber, int pt3, int pt2, int pt1, int faul, int steal, int turnover, int offReb, int defReb, int block) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER, jerseyNumber);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_PT_2, pt2);
@@ -217,10 +229,19 @@ public class ScoreBoardMainFragment extends Fragment {
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_OFF_REB, offReb);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_DEF_REB, defReb);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_BLOCK, block);
-        // contentValue.put(DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP, System.currentTimeMillis());
+        contentValue.put(DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP, System.currentTimeMillis());
 
         Uri uri = getContext().getContentResolver().insert(DatabaseContract.PerformanceTable.CONTENT_URI_PERFORMANCES, contentValue);
         Log.v(LOG_TAG, "Inserted URI: " + uri);
+    }
+
+    private void revokeLatestPerformanceRecord() {
+        String urlRevokeLastPerformanceRecord = DatabaseContract.PerformanceTable.URL_PERFORMANCE + DatabaseContract.PerformanceTable.URL_REVOKE;
+        Uri uriRevokeLastPerformanceRecord = Uri.parse(urlRevokeLastPerformanceRecord);
+        Log.v(LOG_TAG, "uriRevokeLastPerformanceRecord:" + uriRevokeLastPerformanceRecord.toString());
+        getContext().getContentResolver().delete(uriRevokeLastPerformanceRecord, null, null);
+        Log.v(LOG_TAG, "Latest performance record has been revoked.");
+        refreshPage();
     }
 
     private void refreshPt2Panel() {

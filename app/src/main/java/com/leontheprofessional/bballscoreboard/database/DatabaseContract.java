@@ -172,6 +172,7 @@ public final class DatabaseContract {
                 COLUMN_PLAYER_JERSEY_NUMBER + TYPE_INTEGER + COMMA_SEPARATOR +
                 COLUMN_TEAM_PROFILE_CREATED_TIMESTAMP + TYPE_DATETIME + COMMA_SEPARATOR +
                 COLUMN_PLAYER_UUID + TYPE_BLOB + COMMA_SEPARATOR +
+                // todo: unique number check
                 " UNIQUE(" + COLUMN_PLAYER_JERSEY_NUMBER + COMMA_SEPARATOR + COLUMN_PLAYER_UUID + ")" +
                 ")";
 
@@ -560,6 +561,7 @@ public final class DatabaseContract {
         public static final String URL_PERFORMANCE_FAUL = "faul/";
         public static final String URL_PERFORMANCE_TURNOVER = "turnover/";
         public static final String URL_PERFORMANCE_BLOCK = "block/";
+        public static final String URL_REVOKE = "revoke";
 
         public static final String TABLE_NAME = "performance_table";
         public static final String COLUMN_GENERAL_ID = "_id";
@@ -576,10 +578,12 @@ public final class DatabaseContract {
         public static final String COLUMN_TURNOVER = "turnover";
         public static final String COLUMN_BLOCK = "block";
         public static final String COLUMN_ASSIST = "assist";
-        public static final String COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP = "performance_table_created_timestamp";
+        public static final String COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP = "performance_record_created_timestamp";
 
         public static final String URL_PERFORMANCES = "content://" + AUTHORITY + "/performances";
         public static final Uri CONTENT_URI_PERFORMANCES = Uri.parse(URL_PERFORMANCES);
+        public static final String URL_REVOKE_LAST_PERFORMANCE_RECORD = "content://" + AUTHORITY + "/performance/" + URL_REVOKE;
+        public static final Uri CONTENT_URI_REVOKE_LAST_PERFORMANCE_RECORD = Uri.parse(URL_REVOKE_LAST_PERFORMANCE_RECORD);
         public static final String[] projectionForAll = {
                 COLUMN_JERSEY_NUMBER,
                 COLUMN_PT_3,

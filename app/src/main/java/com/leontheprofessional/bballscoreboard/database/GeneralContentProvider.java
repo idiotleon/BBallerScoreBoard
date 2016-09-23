@@ -10,10 +10,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.leontheprofessional.bballscoreboard.database.helper.DatabaseHelper;
 
 public class GeneralContentProvider extends ContentProvider {
+    private static final String LOG_TAG = GeneralContentProvider.class.getSimpleName();
 
     /**
      * ContentProvider for Performance Table
@@ -33,6 +35,8 @@ public class GeneralContentProvider extends ContentProvider {
     private static final int TURNOVER_BY_JERSEY_NUMBER = 12;
     private static final int BLOCK_BY_JERSEY_NUMBER = 13;
     private static final int ASSIST_BY_JERSEY_NUMBER = 14;
+
+    private static final int REVOKE_LAST_PERFORMANCE_RECORD = 19;
     /**
      * ContentProvider for TeamTable
      */
@@ -72,6 +76,7 @@ public class GeneralContentProvider extends ContentProvider {
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "performance/turnover/#", TURNOVER_BY_JERSEY_NUMBER);
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "performance/block/#", BLOCK_BY_JERSEY_NUMBER);
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "performance/assist/#", ASSIST_BY_JERSEY_NUMBER);
+        uriMatcher.addURI(DatabaseContract.AUTHORITY, "performance/revoke", REVOKE_LAST_PERFORMANCE_RECORD);
         // for TEAM_TABLE
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "teams", TEAMS);
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "team/#", TEAM);
@@ -251,9 +256,10 @@ public class GeneralContentProvider extends ContentProvider {
                 break;
             // for team table
             case TEAMS:
-                // todo: fetch all teams
                 tableName = DatabaseContract.TeamTable.TABLE_NAME;
                 projectionForAll = DatabaseContract.TeamTable.projectionForAll;
+                selection = null;
+                selectionArgs = null;
                 sortOrder = DatabaseContract.TeamTable.COLUMN_TEAM_PROFILE_CREATED_TIMESTAMP + " DESC";
                 break;
             case TEAM:
@@ -265,7 +271,6 @@ public class GeneralContentProvider extends ContentProvider {
                 break;
             // for players table
             case PLAYERS:
-                // todo: fetch all players
                 tableName = DatabaseContract.PlayerTable.TABLE_NAME;
                 projectionForAll = DatabaseContract.PlayerTable.projectionForAll;
                 selection = null;
@@ -404,27 +409,29 @@ public class GeneralContentProvider extends ContentProvider {
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-        /*int delCount = 0;
-        Cursor cursor;
-        switch (uriMatcher.match(uri)){
-            case PERFORMANCES:
-                // todo: delete the last row of the whole table
-                cursor = query(DatabaseContract.CONTENT_URI_PERFORMANCES,
-
-
-                        )
-
-                delCount = database.delete();
-                break;
-            case PERFORMANCE_BY_JERSEY_NUMBER:
-                // todo: delete the last record of this player
-
-                break;
+        switch (uriMatcher.match(uri)) {
+            case REVOKE_LAST_PERFORMANCE_RECORD:
+/*                selection = "SELECT * FROM " + DatabaseContract.PerformanceTable.TABLE_NAME
+                        + " ORDER BY " + DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP
+                        + " LIMIT ?";
+                selectionArgs = new String[]{"1"};
+                int rowDeleted = getContext().getContentResolver().delete(
+                        DatabaseContract.PerformanceTable.CONTENT_URI_REVOKE_LAST_PERFORMANCE_RECORD,
+                        selection,
+                        selectionArgs);
+                Log.v(LOG_TAG, rowDeleted + " rows have been deleted");*/
+                String deleteLastRowQuery = "DELETE FROM " + DatabaseContract.PerformanceTable.TABLE_NAME
+                        + " WHERE " + DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " IN"
+                        + " (SELECT " + DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " FROM " + DatabaseContract.PerformanceTable.TABLE_NAME
+                        + " ORDER BY " + DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + " DESC"
+                        + " LIMIT 1)";
+                Log.v(LOG_TAG, "deleteLastRowQuery: " + deleteLastRowQuery);
+                database.execSQL(deleteLastRowQuery);
+                getContext().getContentResolver().notifyChange(uri, null);
+                return 0;
             default:
-                throw new IllegalArgumentException("Unsupported URI: " + uri);
-                return delCount;
-        }*/
-        return 0;
+                throw new IllegalArgumentException("Unkown URI: " + uri);
+        }
     }
 
 /*    private void deleteLastRow(String TableName, int JerseyNumber) {

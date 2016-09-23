@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.leontheprofessional.bballscoreboard.R;
+import com.leontheprofessional.bballscoreboard.helpers.CommonConstants;
 
 public class PlayerMainActivity extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class PlayerMainActivity extends AppCompatActivity {
 
         // todo: use PlayersListFragment to list all players registered
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fl_player_main_activity, PlayersListFragment.newInstance(null));
+        fragmentTransaction.replace(R.id.fl_list_all_players, PlayersListFragment.newInstance(null));
         fragmentTransaction.commit();
 
         fab = (FloatingActionButton) findViewById(R.id.fab_player_main_activity);
@@ -30,7 +31,7 @@ public class PlayerMainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // todo: commit AddOnePlayerDialogFragment for new players registration
                 AddOnePlayerDialogFragment addOnePlayerDialogFragment = new AddOnePlayerDialogFragment();
-                addOnePlayerDialogFragment.show(getSupportFragmentManager(), "add_one_player_dialog_fragment");
+                addOnePlayerDialogFragment.show(getSupportFragmentManager(), CommonConstants.ADD_ONE_PLAYER_DIALOG_FRAGMENT);
             }
         });
     }

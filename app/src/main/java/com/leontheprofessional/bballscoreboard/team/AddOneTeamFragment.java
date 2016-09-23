@@ -1,10 +1,12 @@
 package com.leontheprofessional.bballscoreboard.team;
 
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.content.ContentValues;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,18 +18,18 @@ import android.widget.EditText;
 import com.leontheprofessional.bballscoreboard.R;
 import com.leontheprofessional.bballscoreboard.database.DatabaseContract;
 
+import java.util.UUID;
+
 /**
  * This fragment is a popup window/fragment for adding one team
  */
 
-public class AddOneTeamFragment extends Fragment {
+public class AddOneTeamFragment extends DialogFragment {
 
     private static final String LOG_TAG = AddOneTeamFragment.class.getSimpleName();
 
     private Button btnConfirm;
     private Button btnCancel;
-    private ContentValues teamContentValue;
-
     private EditText teamNameEditText;
 
 
@@ -41,6 +43,7 @@ public class AddOneTeamFragment extends Fragment {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ContentValues teamContentValue = new ContentValues();
                 String teamName = teamNameEditText.getText().toString();
                 if (teamName != "" && teamName != null) {
                     teamContentValue.put(DatabaseContract.TeamTable.COLUMN_TEAM_NAME, teamName);
@@ -48,14 +51,27 @@ public class AddOneTeamFragment extends Fragment {
                     teamName = getString(R.string.name_anonymous);
                     teamContentValue.put(DatabaseContract.TeamTable.COLUMN_TEAM_NAME, teamName);
                 }
+                teamContentValue.put(DatabaseContract.TeamTable.COLUMN_TEAM_UUID, UUID.randomUUID().toString());
                 teamContentValue.put(DatabaseContract.TeamTable.COLUMN_TEAM_PROFILE_CREATED_TIMESTAMP, System.currentTimeMillis());
 
                 Uri uri = getContext().getContentResolver().insert(DatabaseContract.TeamTable.CONTENT_URI_TEAMS, teamContentValue);
                 Log.v(LOG_TAG, uri.toString());
+
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fl_list_all_teams, TeamsListFragment.newInstance(null));
+                fragmentTransaction.commit();
+
+                getDialog().dismiss();
             }
         });
 
         btnCancel = (Button) view.findViewById(R.id.btn_cancel_add_team_fragment);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getDialog().dismiss();
+            }
+        });
 
         return view;
     }
