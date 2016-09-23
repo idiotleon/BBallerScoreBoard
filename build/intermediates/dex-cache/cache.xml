@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="1189adae24006ec84c7fdced029124eddd2cbf09">
+        sha1="7ea8bf64b26536c033ece673b8e766887ff8912b">
         <dex dex="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_e3b9c73ae041f7c76a82e459fa584e6d2b30070e\classes.dex" />
     </item>
     <item
@@ -88,7 +88,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="cb0891fff2db38adcca97d66ed756e897d2d9611">
+        sha1="e04cddc24de4fa7d800d4b8024f3edb79d0e3bd3">
         <dex dex="D:\Leon\Projects\Android\BBallerScoreBoard\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_8d9b526f68a6a4e677db3e9f9552c7735826d7cb\classes.dex" />
     </item>
     <item

@@ -20,6 +20,8 @@ import com.leontheprofessional.bballscoreboard.database.DatabaseContract;
 import com.leontheprofessional.bballscoreboard.helpers.CommonConstants;
 import com.leontheprofessional.bballscoreboard.R;
 
+import org.w3c.dom.Text;
+
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class ScoreBoardMainFragment extends Fragment {
 
@@ -38,6 +40,7 @@ public class ScoreBoardMainFragment extends Fragment {
     private Button btnTurnover;
     private Button btnBlock;
     private Button btnSteal;
+    private Button btnAssist;
 
     private TextView ptr3ScoreBoard;
     private TextView ptr2ScoreBoard;
@@ -49,6 +52,7 @@ public class ScoreBoardMainFragment extends Fragment {
     private TextView stealBoard;
     private TextView turnoverBoard;
     private TextView faulBoard;
+    private TextView assistBoard;
 
     private FloatingActionButton fab;
 
@@ -74,6 +78,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnTurnover = (Button) view.findViewById(R.id.btn_turnover);
         btnBlock = (Button) view.findViewById(R.id.btn_block);
         btnSteal = (Button) view.findViewById(R.id.btn_steal);
+        btnAssist = (Button) view.findViewById(R.id.btn_assist);
 
         ptr2ScoreBoard = (TextView) view.findViewById(R.id.pt_2_score_board);
         ptr3ScoreBoard = (TextView) view.findViewById(R.id.pt_3_score_board);
@@ -83,13 +88,14 @@ public class ScoreBoardMainFragment extends Fragment {
         turnoverBoard = (TextView) view.findViewById(R.id.turnover_board);
         stealBoard = (TextView) view.findViewById(R.id.steal_board);
         blockBoard = (TextView) view.findViewById(R.id.block_board);
+        assistBoard = (TextView) view.findViewById(R.id.assist_board);
 
         fab = (FloatingActionButton) view.findViewById(R.id.fab_revoke_last_performance_record);
 
         btnPtr2Bucket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValuesIntoPerformanceTable(jerseyNumber, 0, DatabaseContract.PerformanceTable.SHOT_MADE, 0, 0, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, DatabaseContract.PerformanceTable.SHOT_MADE, 0, 0, 0, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "2Pt shot made", Toast.LENGTH_SHORT).show();
                 refreshPt2Panel();
             }
@@ -98,7 +104,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnPtr2Miss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValuesIntoPerformanceTable(jerseyNumber, 0, DatabaseContract.PerformanceTable.SHOT_MISS, 0, 0, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, DatabaseContract.PerformanceTable.SHOT_MISS, 0, 0, 0, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "2Pt shot missed", Toast.LENGTH_SHORT).show();
                 refreshPt2Panel();
             }
@@ -107,7 +113,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnPtr3Bucket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValuesIntoPerformanceTable(jerseyNumber, DatabaseContract.PerformanceTable.SHOT_MADE, 0, 0, 0, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, DatabaseContract.PerformanceTable.SHOT_MADE, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "3Pt shot made", Toast.LENGTH_SHORT).show();
                 refreshPt3Panel();
             }
@@ -116,7 +122,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnPtr3Miss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValuesIntoPerformanceTable(jerseyNumber, DatabaseContract.PerformanceTable.SHOT_MISS, 0, 0, 0, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, DatabaseContract.PerformanceTable.SHOT_MISS, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "3Pt shot missed", Toast.LENGTH_SHORT).show();
                 refreshPt3Panel();
             }
@@ -125,7 +131,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnPtr1Bucket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, DatabaseContract.PerformanceTable.SHOT_MADE, 0, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, DatabaseContract.PerformanceTable.SHOT_MADE, 0, 0, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "FreeThrow made", Toast.LENGTH_SHORT).show();
                 refreshPt1Panel();
             }
@@ -134,7 +140,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnPtr1Miss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, DatabaseContract.PerformanceTable.SHOT_MISS, 0, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, DatabaseContract.PerformanceTable.SHOT_MISS, 0, 0, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "FreeThrow miss", Toast.LENGTH_SHORT).show();
                 refreshPt1Panel();
             }
@@ -143,7 +149,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnFaul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, DatabaseContract.PerformanceTable.FAUL_COMMITTED, 0, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, DatabaseContract.PerformanceTable.FAUL_COMMITTED, 0, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "Faul committed", Toast.LENGTH_SHORT).show();
                 refreshFaulPanel();
             }
@@ -152,7 +158,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnSteal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, DatabaseContract.PerformanceTable.STEAL_MADE, 0, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, DatabaseContract.PerformanceTable.STEAL_MADE, 0, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "Nice steal", Toast.LENGTH_SHORT).show();
                 refreshStealPanel();
             }
@@ -162,7 +168,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnTurnover.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.TURNOVER_MADE, 0, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.TURNOVER_MADE, 0, 0, 0, 0);
                 Toast.makeText(getContext(), "Bad Turnover", Toast.LENGTH_SHORT).show();
                 refreshTurnoverPanel();
             }
@@ -171,7 +177,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnOffReb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.REB_GOT, 0, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.REB_GOT, 0, 0, 0);
                 Toast.makeText(getContext(), "Nice Offensive Rebound", Toast.LENGTH_SHORT).show();
                 refreshRebPanel();
             }
@@ -180,7 +186,7 @@ public class ScoreBoardMainFragment extends Fragment {
         btnDefReb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.REB_GOT, 0);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.REB_GOT, 0, 0);
                 Toast.makeText(getContext(), "Nice Defensive Rebound", Toast.LENGTH_SHORT).show();
                 refreshRebPanel();
             }
@@ -189,9 +195,18 @@ public class ScoreBoardMainFragment extends Fragment {
         btnBlock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.BLOCK_MADE);
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.BLOCK_MADE, 0);
                 Toast.makeText(getContext(), "Nice Block", Toast.LENGTH_SHORT).show();
                 refreshBlockPanel();
+            }
+        });
+
+        btnAssist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insertValuesIntoPerformanceTable(jerseyNumber, 0, 0, 0, 0, 0, 0, 0, 0, 0, DatabaseContract.PerformanceTable.ASSIST_MADE);
+                Toast.makeText(getContext(), "Nice Pass", Toast.LENGTH_SHORT).show();
+                refreshAssistPanel();
             }
         });
 
@@ -215,9 +230,10 @@ public class ScoreBoardMainFragment extends Fragment {
         refreshFaulPanel();
         refreshTurnoverPanel();
         refreshBlockPanel();
+        refreshAssistPanel();
     }
 
-    private void insertValuesIntoPerformanceTable(int jerseyNumber, int pt3, int pt2, int pt1, int faul, int steal, int turnover, int offReb, int defReb, int block) {
+    private void insertValuesIntoPerformanceTable(int jerseyNumber, int pt3, int pt2, int pt1, int faul, int steal, int turnover, int offReb, int defReb, int block, int assist) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_JERSEY_NUMBER, jerseyNumber);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_PT_2, pt2);
@@ -229,6 +245,7 @@ public class ScoreBoardMainFragment extends Fragment {
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_OFF_REB, offReb);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_DEF_REB, defReb);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_BLOCK, block);
+        contentValue.put(DatabaseContract.PerformanceTable.COLUMN_ASSIST, assist);
         contentValue.put(DatabaseContract.PerformanceTable.COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP, System.currentTimeMillis());
 
         Uri uri = getContext().getContentResolver().insert(DatabaseContract.PerformanceTable.CONTENT_URI_PERFORMANCES, contentValue);
@@ -382,5 +399,17 @@ public class ScoreBoardMainFragment extends Fragment {
         Log.v(LOG_TAG, "Blocks made: " + blocksMade);
 
         blockBoard.setText(Integer.toString(blocksMade));
+    }
+
+    private void refreshAssistPanel() {
+        String UrlPerformanceAssistMade = DatabaseContract.PerformanceTable.URL_PERFORMANCE + DatabaseContract.PerformanceTable.URL_PERFORMANCE_ASSIST + jerseyNumber;
+        Uri UriPerformanceAssistMade = Uri.parse(UrlPerformanceAssistMade);
+
+        int assistsMade = getContext().getContentResolver()
+                .query(UriPerformanceAssistMade, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
+                .getCount();
+        Log.v(LOG_TAG, "Assist made: " + assistsMade);
+
+        assistBoard.setText(Integer.toString(assistsMade));
     }
 }

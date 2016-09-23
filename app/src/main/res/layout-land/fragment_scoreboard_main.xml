@@ -266,6 +266,31 @@
                     android:text="@string/zero" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/assist" />
+
+                <Button
+                    android:id="@+id/btn_assist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/add" />
+
+                <TextView
+                    android:id="@+id/assist_board"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero" />
+            </LinearLayout>
+
         </LinearLayout>
 
         <android.support.design.widget.FloatingActionButton

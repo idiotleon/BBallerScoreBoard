@@ -10,12 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd15110e-747a-4365-94af-d2b01015f783" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/selectplayers/SelectPlayersLVAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/selectplayers/SelectPlayersListFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_scoreboard_main.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/empty_view_list_all_teams.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_item_list_all_teams.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/team_detail_activity.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
@@ -24,29 +18,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-23.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-23.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/DatabaseContract.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/DatabaseContract.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/GeneralContentProvider.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/GeneralContentProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/helpers/CommonConstants.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/helpers/CommonConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/player/AddOnePlayerDialogFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/player/AddOnePlayerDialogFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/player/ListAllPlayersLVAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/player/ListAllPlayersLVAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/player/PlayerMainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/player/PlayerMainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/player/PlayersListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/player/PlayersListFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/AddOneTeamFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/AddOneTeamFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/TeamMainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/TeamMainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/TeamsListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/TeamsListFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/main_content_team_main_activity.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main_content_team_main_activity.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/player_main_activity.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/player_main_activity.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_scoreboard_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_scoreboard_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/ListOneTeamMembersFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/TeamDetailsActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/adapter/TeamMemberListViewAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/ListAllTeamsLVAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_all_players_empty_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/empty_view_list_all_players.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/main_activity_team.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/team_main_activity.xml" />
     </list>
     <ignored path="BBallerScoreBoard.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,68 +56,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GeneralContentProvider.java" pinned="true" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/GeneralContentProvider.java">
+      <file leaf-file-name="ScoreBoardMainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1085">
-              <caret line="425" column="99" selection-start-line="425" selection-start-column="99" selection-end-line="425" selection-end-column="99" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getType#0;class#GeneralContentProvider#0" expanded="false" />
-                <element signature="method#insert#0;class#GeneralContentProvider#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="588">
+              <caret line="42" column="58" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScoreBoardMainFragment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ScoreBoardMainFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="778">
-              <caret line="59" column="63" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
-              <folding>
-                <element signature="e#8735#8900#0" expanded="true" />
-                <element signature="e#8899#8900#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2676">
+              <caret line="205" column="41" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="41" />
+              <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_scoreboard_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="1424">
-              <caret line="272" column="36" selection-start-line="272" selection-start-column="36" selection-end-line="272" selection-end-column="36" />
-              <folding>
-                <element signature="e#10739#10758#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_scoreboard_main.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/fragment_scoreboard_main.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4768">
-              <caret line="244" column="0" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
-              <folding>
-                <element signature="e#11752#11771#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="DatabaseContract.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/DatabaseContract.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="580" column="77" selection-start-line="580" selection-start-column="35" selection-end-line="580" selection-end-column="77" />
+            <state relative-caret-position="205">
+              <caret line="559" column="57" selection-start-line="559" selection-start-column="35" selection-end-line="559" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -1746,7 +1686,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/helper/DatabaseHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_all_players.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_all_players_empty_view.xml" />
@@ -1776,17 +1715,18 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/SelectPlayersListFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/selectplayers/SelectPlayersLVAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/team/selectplayers/SelectPlayersListFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/GeneralContentProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/DatabaseContract.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/GeneralContentProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/fragment_scoreboard_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainFragment.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1094" />
-    <option name="y" value="-113" />
+    <option name="x" value="578" />
+    <option name="y" value="21" />
     <option name="width" value="1096" />
     <option name="height" value="1896" />
   </component>
@@ -1826,10 +1766,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="D:/Software/Matrix/AndroidSDK" />
-    <property name="device.picker.selection" value="192.168.173.101:5555" />
+    <property name="device.picker.selection" value="84B5T15A29018833" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Leon/Projects/Android/BBallerScoreBoard/app/src/main/java/com/leontheprofessional/bballscoreboard/database/DatabaseContract.java" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
@@ -2212,13 +2153,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1094" y="-113" width="1096" height="1896" extended-state="1" />
+    <frame x="578" y="21" width="1096" height="1896" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1890" y="-15" width="1411" height="870" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="true" show_stripe_button="true" weight="0.3296893" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1890" y="-15" width="1411" height="870" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2316,13 +2257,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/Software/Matrix/AndroidSDK/extras/android/m2repository/com/android/support/support-v4/23.4.0/support-v4-23.4.0-sources.jar!/android/support/v4/content/ContentResolverCompatJellybean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Software/Matrix/AndroidSDK/extras/android/m2repository/com/android/support/support-v4/23.4.0/support-v4-23.4.0-sources.jar!/android/support/v4/content/ContentResolverCompat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1092">
@@ -2719,14 +2653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/DatabaseContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="580" column="77" selection-start-line="580" selection-start-column="35" selection-end-line="580" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Software/Matrix/AndroidSDK/sources/android-23/android/content/ContentProviderNative.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -2737,48 +2663,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/GeneralContentProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1085">
-          <caret line="425" column="99" selection-start-line="425" selection-start-column="99" selection-end-line="425" selection-end-column="99" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getType#0;class#GeneralContentProvider#0" expanded="false" />
-            <element signature="method#insert#0;class#GeneralContentProvider#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="59" column="63" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
-          <folding>
-            <element signature="e#8735#8900#0" expanded="true" />
-            <element signature="e#8899#8900#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1424">
-          <caret line="272" column="36" selection-start-line="272" selection-start-column="36" selection-end-line="272" selection-end-column="36" />
-          <folding>
-            <element signature="e#10739#10758#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/fragment_scoreboard_main.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11752#11771#0" expanded="true" />
+            <element signature="e#11777#11812#0" expanded="true" />
+            <element signature="e#11846#11862#0" expanded="true" />
+            <element signature="e#12089#12124#0" expanded="true" />
+            <element signature="e#12158#12171#0" expanded="true" />
+            <element signature="e#12399#12413#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2786,17 +2680,67 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="42" column="58" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_scoreboard_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/fragment_scoreboard_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4768">
-          <caret line="244" column="0" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
+        <state relative-caret-position="1067">
+          <caret line="279" column="23" selection-start-line="279" selection-start-column="23" selection-end-line="279" selection-end-column="23" />
           <folding>
-            <element signature="e#11752#11771#0" expanded="true" />
+            <element signature="e#11777#11812#0" expanded="true" />
+            <element signature="e#11846#11862#0" expanded="true" />
+            <element signature="e#12089#12124#0" expanded="true" />
+            <element signature="e#12158#12171#0" expanded="true" />
+            <element signature="e#12399#12413#0" expanded="true" />
           </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/GeneralContentProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1285">
+          <caret line="245" column="22" selection-start-line="245" selection-start-column="22" selection-end-line="245" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getType#0;class#GeneralContentProvider#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/database/DatabaseContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="559" column="57" selection-start-line="559" selection-start-column="35" selection-end-line="559" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/leontheprofessional/bballscoreboard/scoreboard/ScoreBoardMainFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2676">
+          <caret line="205" column="41" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="41" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

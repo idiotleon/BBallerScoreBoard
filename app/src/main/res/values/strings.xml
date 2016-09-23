@@ -42,6 +42,7 @@
     <string name="player_position">Player Position</string>
     <string name="empty_view_list_all_teams">No teams added</string>
     <string name="empty_view_list_all_players">No players added</string>
+    <string name="assist">Assist</string>
     <string-array name="player_position">
         <item>Unclear</item>
         <item>Center</item>
