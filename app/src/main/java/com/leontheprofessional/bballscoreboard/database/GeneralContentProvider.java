@@ -46,12 +46,19 @@ public class GeneralContentProvider extends ContentProvider {
      * ContentProvider entrances for Player_Table
      */
     private static final int PLAYERS = 31;
-    private static final int PLAYER_BY_JERSEY_NUMBER = 32;
+    private static final int PLAYER_BY_PLAYER_UUID = 32;
     private static final int PLAYER_BY_FIRST_NAME = 33;
     private static final int PLAYER_BY_LAST_NAME = 34;
     private static final int PLAYER_BY_HEIGHT = 35;
     private static final int PLAYER_BY_WEIGHT = 36;
     private static final int PLAYER_BY_POSITION = 37;
+
+    /**
+     * ContentProvider entraces for Relationship_Table
+     */
+    private static final int RELATIONSHIPS = 41;
+    private static final int RELATIONSHIP_BY_TEAM_UUID = 42;
+    private static final int RELATIONSHIP_BY_PLAYER_UUID = 43;
 
 
     private SQLiteDatabase database;
@@ -61,6 +68,7 @@ public class GeneralContentProvider extends ContentProvider {
 
     static {
         uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+        // todo: fetch all infos by player uuid after setting up UUID to performance mechanism
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "performances", PERFORMANCES);
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "performance/#", PERFORMANCE_BY_JERSEY_NUMBER);
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "performance/pt2made/#", PT2_MADE_BY_JERSEY_NUMBER);
@@ -82,12 +90,16 @@ public class GeneralContentProvider extends ContentProvider {
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "team/#", TEAM);
         // for PLAYER_TABLE
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "players", PLAYERS);
-        uriMatcher.addURI(DatabaseContract.AUTHORITY, "player/by_jersey_number/#", PLAYER_BY_JERSEY_NUMBER);
+        uriMatcher.addURI(DatabaseContract.AUTHORITY, "player/by_player_uuid/#", PLAYER_BY_PLAYER_UUID);
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "player/by_first_name/#", PLAYER_BY_FIRST_NAME);
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "player/by_last_name/#", PLAYER_BY_LAST_NAME);
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "player/by_height/#", PLAYER_BY_HEIGHT);
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "player/by_weight/#", PLAYER_BY_WEIGHT);
         uriMatcher.addURI(DatabaseContract.AUTHORITY, "player/by_position/#", PLAYER_BY_POSITION);
+        // for RELATIONSHIP_TABLE
+        uriMatcher.addURI(DatabaseContract.AUTHORITY, "relationships", RELATIONSHIPS);
+        uriMatcher.addURI(DatabaseContract.AUTHORITY, "relationship/by_team_uuid/#", RELATIONSHIP_BY_TEAM_UUID);
+        uriMatcher.addURI(DatabaseContract.AUTHORITY, "relationship/by_player_uuid/#", RELATIONSHIP_BY_PLAYER_UUID);
     }
 
     @Override
@@ -111,6 +123,25 @@ public class GeneralContentProvider extends ContentProvider {
         String[] projectionForAll;
 
         switch (uriMatcher.match(uri)) {
+            case RELATIONSHIPS:
+                tableName = DatabaseContract.RelationshipTableTeamsPlayers.TABLE_NAME;
+                projectionForAll = DatabaseContract.RelationshipTableTeamsPlayers.projectionForAll;
+                sortOrder = DatabaseContract.RelationshipTableTeamsPlayers.COLUMN_RELATIONSHIP_CREATED_TIMESTAMP + " ASC";
+                break;
+            case RELATIONSHIP_BY_TEAM_UUID:
+                tableName = DatabaseContract.RelationshipTableTeamsPlayers.TABLE_NAME;
+                projectionForAll = DatabaseContract.RelationshipTableTeamsPlayers.projectionForAll;
+                sortOrder = DatabaseContract.RelationshipTableTeamsPlayers.COLUMN_RELATIONSHIP_CREATED_TIMESTAMP + " ASC";
+                selection = DatabaseContract.RelationshipTableTeamsPlayers.COLUMN_TEAM_UUID + " = ?";
+                selectionArgs[0] = (uri.getLastPathSegment()).toString();
+                break;
+            case RELATIONSHIP_BY_PLAYER_UUID:
+                tableName = DatabaseContract.RelationshipTableTeamsPlayers.TABLE_NAME;
+                projectionForAll = DatabaseContract.RelationshipTableTeamsPlayers.projectionForAll;
+                sortOrder = DatabaseContract.RelationshipTableTeamsPlayers.COLUMN_RELATIONSHIP_CREATED_TIMESTAMP + " ASC";
+                selection = DatabaseContract.RelationshipTableTeamsPlayers.COLUMN_PLAYER_UUID + " = ?";
+                selectionArgs[0] = (uri.getLastPathSegment()).toString();
+                break;
             case PERFORMANCES:
                 // do nothing
                 tableName = DatabaseContract.PerformanceTable.TABLE_NAME;
@@ -277,7 +308,7 @@ public class GeneralContentProvider extends ContentProvider {
                 selectionArgs = null;
                 sortOrder = DatabaseContract.PlayerTable.COLUMN_PLAYER_PROFILE_CREATED_TIMESTAMP + " DESC";
                 break;
-            case PLAYER_BY_JERSEY_NUMBER:
+            case PLAYER_BY_PLAYER_UUID:
                 tableName = DatabaseContract.PlayerTable.TABLE_NAME;
                 projectionForAll = DatabaseContract.PlayerTable.projectionForAll;
                 selection = DatabaseContract.PlayerTable.COLUMN_PLAYER_JERSEY_NUMBER + " = ?";
@@ -350,7 +381,7 @@ public class GeneralContentProvider extends ContentProvider {
                 return DatabaseContract.TeamTable.TEAM_CONTENT_ITEM_TYPE;
             case PLAYERS:
                 return DatabaseContract.PlayerTable.PLAYERS_CONTENT_TYPE;
-            case PLAYER_BY_JERSEY_NUMBER:
+            case PLAYER_BY_PLAYER_UUID:
             case PLAYER_BY_FIRST_NAME:
             case PLAYER_BY_LAST_NAME:
             case PLAYER_BY_HEIGHT:

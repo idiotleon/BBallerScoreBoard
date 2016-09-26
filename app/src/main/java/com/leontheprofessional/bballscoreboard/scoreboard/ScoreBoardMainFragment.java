@@ -264,14 +264,22 @@ public class ScoreBoardMainFragment extends Fragment {
 
     private void refreshPt2Panel() {
         String UrlPerformancePt2Made = DatabaseContract.PerformanceTable.URL_PERFORMANCE + DatabaseContract.PerformanceTable.URL_PERFORMANCE_PT2_MADE + jerseyNumber;
-        Uri UriPerformancePt2Made = Uri.parse(UrlPerformancePt2Made);
+        Uri url_performance_pt2_made = Uri.parse(UrlPerformancePt2Made);
         String UrlPerformancePt2Missed = DatabaseContract.PerformanceTable.URL_PERFORMANCE + DatabaseContract.PerformanceTable.URL_PERFORMANCE_PT2_MISSED + jerseyNumber;
-        Uri UriPerformancePt2Missed = Uri.parse(UrlPerformancePt2Missed);
+        Uri url_performance_pt2_missed = Uri.parse(UrlPerformancePt2Missed);
         int pt2Made = getContext().getContentResolver()
-                .query(UriPerformancePt2Made, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
+                .query(url_performance_pt2_made,
+                        DatabaseContract.PerformanceTable.projectionForAll,
+                        null,
+                        null,
+                        null)
                 .getCount();
         int pt2Missed = getContext().getContentResolver()
-                .query(UriPerformancePt2Missed, DatabaseContract.PerformanceTable.projectionForAll, null, null, null)
+                .query(url_performance_pt2_missed,
+                        DatabaseContract.PerformanceTable.projectionForAll,
+                        null,
+                        null,
+                        null)
                 .getCount();
         int pt2Attempted = pt2Made + pt2Missed;
         Log.v(LOG_TAG, "pt2Attempted: " + pt2Attempted);

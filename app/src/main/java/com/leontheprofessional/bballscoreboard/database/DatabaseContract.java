@@ -160,9 +160,11 @@ public final class DatabaseContract {
         public static final String COLUMN_TEAM_ID = "_id";
         public static final String COLUMN_TEAM_UUID = "team_uuid";
         public static final String COLUMN_TEAM_NAME = "team_name";
-        public static final String COLUMN_PLAYER_JERSEY_NUMBER = "player_jersey_number_team";
-        public static final String COLUMN_PLAYER_UUID = "player_uuid_team";
         public static final String COLUMN_TEAM_PROFILE_CREATED_TIMESTAMP = "team_created_time_stamp";
+        // might be abandoned
+        public static final String COLUMN_PLAYER_JERSEY_NUMBER = "player_jersey_number_team";
+        // might be abandoned
+        public static final String COLUMN_PLAYERS_UUIDS = "player_uuid_team";
 
         public static final String TEAM_TABLE_CREATION_QUERY = "CREATE TABLE " +
                 TABLE_NAME + " (" +
@@ -171,9 +173,9 @@ public final class DatabaseContract {
                 COLUMN_TEAM_NAME + TYPE_TEXT + COMMA_SEPARATOR +
                 COLUMN_PLAYER_JERSEY_NUMBER + TYPE_INTEGER + COMMA_SEPARATOR +
                 COLUMN_TEAM_PROFILE_CREATED_TIMESTAMP + TYPE_DATETIME + COMMA_SEPARATOR +
-                COLUMN_PLAYER_UUID + TYPE_BLOB + COMMA_SEPARATOR +
+                COLUMN_PLAYERS_UUIDS + TYPE_TEXT + COMMA_SEPARATOR +
                 // todo: unique number check
-                " UNIQUE(" + COLUMN_PLAYER_JERSEY_NUMBER + COMMA_SEPARATOR + COLUMN_PLAYER_UUID + ")" +
+                " UNIQUE(" + COLUMN_PLAYER_JERSEY_NUMBER + COMMA_SEPARATOR + COLUMN_PLAYERS_UUIDS + ")" +
                 ")";
 
         public static final String TEAM_TABLE_DELETION_QUERY = "DROP TABLE IF EXISTS " + TABLE_NAME;
@@ -184,12 +186,55 @@ public final class DatabaseContract {
                 "vnd." + AUTHORITY + ".team";
 
         public static final String URL_TEAMS = "content://" + AUTHORITY + "/teams";
+
+        public static final String URL_TEAM = "content://" + AUTHORITY + "/team/";
+        public static final String URL_TEAM_BY_UUID = "team_uuid/";
+        
         public static final Uri CONTENT_URI_TEAMS = Uri.parse(URL_TEAMS);
         public static final String[] projectionForAll = {
                 COLUMN_TEAM_ID,
                 COLUMN_TEAM_UUID,
                 COLUMN_TEAM_NAME,
                 COLUMN_TEAM_PROFILE_CREATED_TIMESTAMP
+        };
+    }
+
+    public static abstract class RelationshipTableTeamsPlayers implements BaseColumns {
+
+        public static final String URL_RELATIONSHIP = "content://" + AUTHORITY + "/relationship/";
+        public static final String URL_RELATIONSHIP_BY_TEAM_UUID = "by_team_uuid/";
+        public static final String URL_RELATIONSHIP_BY_PLAYER_UUID = "by_player_uuid/";
+
+        public static final String TABLE_NAME = "relationship_team_player";
+
+        public static final String COLUMN_GENERAL_ID = "_id";
+        public static final String COLUMN_TEAM_UUID = "team_uuid";
+        public static final String COLUMN_PLAYER_UUID = "player_uuid";
+        public static final String COLUMN_RELATIONSHIP_CREATED_TIMESTAMP = "relationship_created_timestamp";
+
+        public static final String TABLE_CREATION_QUERY = "CREATE TABLE " +
+                TABLE_NAME + " (" +
+                COLUMN_GENERAL_ID + TYPE_INTEGER + PRIMARY_KEY + AUTO_INCREMENT + COMMA_SEPARATOR +
+                COLUMN_TEAM_UUID + TYPE_BLOB + COMMA_SEPARATOR +
+                COLUMN_PLAYER_UUID + TYPE_BLOB + COMMA_SEPARATOR +
+                COLUMN_RELATIONSHIP_CREATED_TIMESTAMP + TYPE_DATETIME +
+                ")";
+
+        public static final String TABLE_DELETION_QUERY = "DROP TABLE IF EXISTS " + TABLE_NAME;
+
+        public static final String RELATIONSHIPS_CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
+                "vnd." + AUTHORITY + ".relationships";
+        public static final String RELATIONSHIP_CONTENT_ITEM_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
+                "vnd." + AUTHORITY + ".relationship";
+
+        public static final String URL_RELATIONSHIPS = "content://" + AUTHORITY + "/relationships";
+        public static final Uri CONTENT_URI_RELATIONSHIPS = Uri.parse(URL_RELATIONSHIPS);
+
+        public static final String[] projectionForAll = {
+                COLUMN_GENERAL_ID,
+                COLUMN_TEAM_UUID,
+                COLUMN_PLAYER_UUID,
+                COLUMN_RELATIONSHIP_CREATED_TIMESTAMP
         };
     }
 
@@ -625,8 +670,8 @@ public final class DatabaseContract {
                 COLUMN_PERFORMANCE_TABLE_CREATED_TIMESTAMP + TYPE_DATETIME +
                 ")";
 
-        public static final String PERFORMANCE_TABLE_DELETION_QUERY = "DROP TABLE IF EXISTS " + TABLE_NAME;
 
+        public static final String PERFORMANCE_TABLE_DELETION_QUERY = "DROP TABLE IF EXISTS " + TABLE_NAME;
     }
 
 

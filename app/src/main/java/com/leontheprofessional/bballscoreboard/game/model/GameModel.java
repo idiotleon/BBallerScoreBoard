@@ -65,25 +65,6 @@ public class GameModel {
         return gameTimeStamp;
     }
 
-    public static void insertOneGameInfo(Context context,
-                                         String gameUUID,
-                                         CourtModel courtModel,
-                                         String hostTeamUUID,
-                                         String guestTeamUUID) {
-
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseContract.GameTable.COLUMN_GAME_UUID, gameUUID);
-        contentValues.put(DatabaseContract.GameTable.COLUMN_HOST_TEAM_UUID, hostTeamUUID);
-        contentValues.put(DatabaseContract.GameTable.COLUMN_GUEST_TEAM_UUID, guestTeamUUID);
-        contentValues.put(DatabaseContract.GameTable.COLUMN_COURT_NAME, courtModel.getCourtName());
-        contentValues.put(DatabaseContract.GameTable.COLUMN_COURT_LATITUDE, courtModel.getCourtLatitude());
-        contentValues.put(DatabaseContract.GameTable.COLUMN_COURT_LONGITUDE, courtModel.getCourtLongitude());
-        contentValues.put(DatabaseContract.GameTable.COLUMN_COURT_ADDRESS, courtModel.getCourtAddress());
-        contentValues.put(DatabaseContract.GameTable.COLUMN_GAME_TIMESTAMP, System.currentTimeMillis());
-        Uri uri = context.getContentResolver().insert(DatabaseContract.GameTable.CONTENT_URI_GAMES, contentValues);
-        Log.v(LOG_TAG, uri.toString());
-    }
-
     public static void insertOneGameInfo(Context context, GameModel gameModel) {
 
         ContentValues contentValues = new ContentValues();
