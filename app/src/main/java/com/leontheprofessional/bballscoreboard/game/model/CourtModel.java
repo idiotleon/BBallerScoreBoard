@@ -1,4 +1,4 @@
-package com.leontheprofessional.bballscoreboard.game;
+package com.leontheprofessional.bballscoreboard.game.model;
 
 /**
  * Created by LeonthePro7 on 9/25/2016.

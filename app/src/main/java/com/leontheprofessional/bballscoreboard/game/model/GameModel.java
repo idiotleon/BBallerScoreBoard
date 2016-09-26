@@ -1,9 +1,8 @@
-package com.leontheprofessional.bballscoreboard.game;
+package com.leontheprofessional.bballscoreboard.game.model;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.net.Uri;
-import android.provider.Settings;
 import android.util.Log;
 
 import com.leontheprofessional.bballscoreboard.database.DatabaseContract;
