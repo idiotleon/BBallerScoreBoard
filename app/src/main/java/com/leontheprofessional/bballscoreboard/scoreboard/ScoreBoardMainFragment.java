@@ -56,6 +56,7 @@ public class ScoreBoardMainFragment extends Fragment {
 
     private FloatingActionButton fab;
 
+    // Todo: avoid using jersey number as the identifier, intead use playerUUID
     private int jerseyNumber;
 
     @Nullable

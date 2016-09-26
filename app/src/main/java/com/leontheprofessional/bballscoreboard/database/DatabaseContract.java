@@ -636,10 +636,50 @@ public final class DatabaseContract {
 
         public static final String COLUMN_HOST_TEAM_UUID = "host_game_uuid";
         public static final String COLUMN_GUEST_TEAM_UUID = "guest_game_uuid";
-        public static final String COLUMN_ID = "_id";
-        public static final String COLUMN_UUID = "game_uuid";
+        public static final String COLUMN_GENERAL_ID = "_id";
+        public static final String COLUMN_GAME_UUID = "game_uuid";
         public static final String COLUMN_STARTING_TIME = "starting_time";
         public static final String COLUMN_END_TIME = "end_time";
-        public static final String COLUMN_LOCATION = "location";
+        public static final String COLUMN_COURT_ADDRESS = "court_address";
+        public static final String COLUMN_COURT_NAME = "court_name";
+        public static final String COLUMN_COURT_LATITUDE = "court_latitude";
+        public static final String COLUMN_COURT_LONGITUDE = "court_longitude";
+        public static final String COLUMN_GAME_TIMESTAMP = "game_stamp";
+
+        public static final String GAME_TABLE_CREATION_QUERY = "CREATE TABLE " +
+                TABLE_NAME + " (" +
+                COLUMN_GENERAL_ID + TYPE_INTEGER + PRIMARY_KEY + AUTO_INCREMENT + COMMA_SEPARATOR +
+                COLUMN_GAME_UUID + TYPE_BLOB + COMMA_SEPARATOR +
+                COLUMN_HOST_TEAM_UUID + TYPE_BLOB + COMMA_SEPARATOR +
+                COLUMN_GUEST_TEAM_UUID + TYPE_BLOB + COMMA_SEPARATOR +
+                COLUMN_COURT_ADDRESS + TYPE_TEXT + COMMA_SEPARATOR +
+                COLUMN_COURT_NAME + TYPE_TEXT + COMMA_SEPARATOR +
+                COLUMN_COURT_LATITUDE + TYPE_REAL + COMMA_SEPARATOR +
+                COLUMN_COURT_LONGITUDE + TYPE_REAL + COMMA_SEPARATOR +
+                COLUMN_GAME_TIMESTAMP + TYPE_DATETIME +
+                ")";
+
+        public static final String[] projectionForAll = {
+                COLUMN_GENERAL_ID,
+                COLUMN_GAME_UUID,
+                COLUMN_HOST_TEAM_UUID,
+                COLUMN_GUEST_TEAM_UUID,
+                COLUMN_COURT_NAME,
+                COLUMN_COURT_LATITUDE,
+                COLUMN_COURT_LONGITUDE,
+                COLUMN_COURT_ADDRESS,
+                COLUMN_GAME_TIMESTAMP
+        };
+
+        public static final String GAME_CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
+                "vnd." + AUTHORITY + ".games";
+        public static final String GAME_CONTENT_ITEM_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
+                "vnd." + AUTHORITY + ".game";
+
+        public static final String URL_GAME = "content://" + AUTHORITY + "/games";
+        public static final Uri CONTENT_URI_GAMES = Uri.parse(URL_GAME);
+
+        public static final String GAME_TABLE_DELETION_QUERY = "DROP TABLE IF EXISTS " + TABLE_NAME;
+
     }
 }

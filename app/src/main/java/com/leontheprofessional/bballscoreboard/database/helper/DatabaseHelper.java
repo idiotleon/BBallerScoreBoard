@@ -21,6 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.v(LOG_TAG, "onCreate() executed.");
         // todo: one can see how IMPORTANT unit testing for database is!!!
         Log.v(LOG_TAG, DatabaseContract.PerformanceTable.PERFORMANCE_TABLE_CREATION_QUERY);
+        Log.v(LOG_TAG, DatabaseContract.GameTable.GAME_TABLE_CREATION_QUERY);
         Log.v(LOG_TAG, DatabaseContract.PlayerTable.PLAYER_TABLE_CREATION);
         Log.v(LOG_TAG, DatabaseContract.TeamTable.TEAM_TABLE_CREATION_QUERY);
         Log.v(LOG_TAG, DatabaseContract.Pt3Table.Pt3_TABLE_CREATION_QUERY);
@@ -33,6 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.v(LOG_TAG, DatabaseContract.AssistTable.ASSIST_TABLE_CREATION_QUERY);
 
         db.execSQL(DatabaseContract.PerformanceTable.PERFORMANCE_TABLE_CREATION_QUERY);
+        db.execSQL(DatabaseContract.GameTable.GAME_TABLE_CREATION_QUERY);
         db.execSQL(DatabaseContract.PlayerTable.PLAYER_TABLE_CREATION);
         db.execSQL(DatabaseContract.TeamTable.TEAM_TABLE_CREATION_QUERY);
         db.execSQL(DatabaseContract.Pt3Table.Pt3_TABLE_CREATION_QUERY);
@@ -50,6 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.v(LOG_TAG, "onUpgrade() executed.");
         Log.v(LOG_TAG, DatabaseContract.PerformanceTable.PERFORMANCE_TABLE_DELETION_QUERY);
+        Log.v(LOG_TAG, DatabaseContract.GameTable.GAME_TABLE_DELETION_QUERY);
         Log.v(LOG_TAG, DatabaseContract.PlayerTable.PLAYER_TABLE_DELETION_QUERY);
         Log.v(LOG_TAG, DatabaseContract.TeamTable.TEAM_TABLE_DELETION_QUERY);
         Log.v(LOG_TAG, DatabaseContract.Pt3Table.PT3_TABLE_DELETION_QUERY);
@@ -63,6 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.v(LOG_TAG, DatabaseContract.TurnoverTable.TURNOVER_TABLE_DELETION_QUERY);
 
         db.execSQL(DatabaseContract.TeamTable.TEAM_TABLE_DELETION_QUERY);
+        db.execSQL(DatabaseContract.GameTable.GAME_TABLE_DELETION_QUERY);
         db.execSQL(DatabaseContract.PlayerTable.PLAYER_TABLE_DELETION_QUERY);
         db.execSQL(DatabaseContract.Pt3Table.PT3_TABLE_DELETION_QUERY);
         db.execSQL(DatabaseContract.Pt2Table.PT2_TABLE_DELETION_QUERY);
